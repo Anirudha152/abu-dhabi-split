@@ -52,7 +52,7 @@
         <p class="split-head">The four top-ups</p><table class="split"><tbody>${ups}</tbody></table>`;
     }
     if (p.kind === 'card') {
-      return `<dl class="facts"><div><dt>What happened</dt><dd>${aedFmt.format(c.withdrawnAED)} AED was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED).</dd></div></dl>`;
+      return `<dl class="facts"><div><dt>What happened</dt><dd>${aedFmt.format(c.withdrawnAED)} AED was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED), received by ${esc(name('bhatnagar'))}.</dd></div></dl>`;
     }
     const t = D.payments.find((x) => x.kind === 'transfer' && x !== p && x.title.endsWith(name(p.person)) && Math.abs(x.inr) === Math.abs(p.inr));
     const other = t ? name(t.person) : '';
@@ -117,7 +117,7 @@
       <section aria-labelledby="h-rates">
         <div class="sec-head"><h2 id="h-rates">How dirhams became rupees</h2></div>
         <dl class="rates">
-          <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out, over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, ${esc(name('bhatnagar'))} ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
+          <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out (to ${esc(name('bhatnagar'))}), over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, ${esc(name('bhatnagar'))} ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
           <div><dt>Nitye’s cash, Gaurish’s go-karting</dt><dd>₹${D.rates.cash.toFixed(2)}</dd></div>
           <div><dt>${esc(name('baid'))}’s payments in AED</dt><dd>₹${D.rates.baid.toFixed(2)}</dd></div>
           <div><dt>Card charges billed in INR<span class="sub">Warner Bros. World, both Dubai taxis paid by card, the Delhi airport taxi</span></dt><dd>actual ₹</dd></div>

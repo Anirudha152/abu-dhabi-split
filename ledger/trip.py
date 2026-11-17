@@ -165,8 +165,8 @@ add('2026-11-16', 'Taxi from Delhi airport', 'Ani, cash', 'ani', None, None, eq(
 def pay(person, inr, title, kind, date=None, expense=None):
     payments.append({'person': person, 'inr': inr, 'title': title, 'kind': kind, 'date': date, 'expense': expense})
 pay('ani', ANI_LOADED, 'Loaded the forex card (3 × ₹40,000 + ₹4,290)', 'card', '2026-11-12')
-pay('ani', -WITHDRAW_INR, f'Got back the forex card leftover ({WITHDRAW_AED} AED)', 'card')
 pay('bhatnagar', BHATNAGAR_LOADED, 'Loaded the forex card (rest of the top-ups)', 'card', '2026-11-12')
+pay('bhatnagar', -WITHDRAW_INR, f'Got back the forex card leftover ({WITHDRAW_AED} AED)', 'card')
 for e in expenses:
     if e['payer'] != 'card':
         pay(e['payer'], e['inr'], e['title'], 'expense', e['date'], e['id'])
@@ -221,12 +221,13 @@ settle = [
     {'from': 'kavya', 'to': 'nitye', 'inr': rounded['nitye']},
     {'from': 'kavya', 'to': 'ani', 'inr': owe('kavya') - rounded['nitye']},
 ]
-to_bh = ['sumit', 'arnav', 'anushree', 'baid']
+to_bh = ['nehal']
 settle += [{'from': p, 'to': 'bhatnagar', 'inr': owe(p)} for p in to_bh]
 rest_bh = rounded['bhatnagar'] - sum(owe(p) for p in to_bh)
 settle += [{'from': 'sanket', 'to': 'bhatnagar', 'inr': rest_bh},
            {'from': 'sanket', 'to': 'ani', 'inr': owe('sanket') - rest_bh},
-           {'from': 'nehal', 'to': 'ani', 'inr': owe('nehal')}]
+]
+settle += [{'from': p, 'to': 'ani', 'inr': owe(p)} for p in ['sumit', 'arnav', 'anushree', 'baid']]
 assert all(x['inr'] > 0 for x in settle), settle
 owes_total = {p: owe(p) for p in PEOPLE}
 settle.sort(key=lambda x: (-owes_total[x['from']], -x['inr']))

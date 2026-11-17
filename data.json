@@ -44,8 +44,8 @@
    "id": "ani",
    "name": "Ani",
    "spent": 45200.35,
-   "paid": 119645.0,
-   "net": 74444.65
+   "paid": 124895.0,
+   "net": 79694.65
   },
   {
    "id": "baid",
@@ -58,8 +58,8 @@
    "id": "bhatnagar",
    "name": "L Bhatnagar",
    "spent": 30456.36,
-   "paid": 40846.0,
-   "net": 10389.64
+   "paid": 35596.0,
+   "net": 5139.64
   },
   {
    "id": "nitye",
@@ -2054,19 +2054,19 @@
    "expense": null
   },
   {
-   "person": "ani",
-   "inr": -5250,
-   "title": "Got back the forex card leftover (212.82 AED)",
-   "kind": "card",
-   "date": null,
-   "expense": null
-  },
-  {
    "person": "bhatnagar",
    "inr": 18380,
    "title": "Loaded the forex card (rest of the top-ups)",
    "kind": "card",
    "date": "2026-11-12",
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": -5250,
+   "title": "Got back the forex card leftover (212.82 AED)",
+   "kind": "card",
+   "date": null,
    "expense": null
   },
   {
@@ -2302,36 +2302,36 @@
   {
    "from": "sanket",
    "to": "ani",
-   "inr": 14516
+   "inr": 14605
   },
   {
    "from": "sanket",
    "to": "bhatnagar",
-   "inr": 209
+   "inr": 120
   },
   {
    "from": "sumit",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 6787
   },
   {
    "from": "nehal",
-   "to": "ani",
+   "to": "bhatnagar",
    "inr": 5020
   },
   {
    "from": "arnav",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 1524
   },
   {
    "from": "anushree",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 1524
   },
   {
    "from": "baid",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 346
   }
  ],
