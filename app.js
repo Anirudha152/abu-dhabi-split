@@ -3,7 +3,7 @@
   const aedFmt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
   const rupees = (n) => '₹' + inrFmt.format(Math.round(n));
   const plain = (n) => inrFmt.format(Math.round(Math.abs(n)));
-  const dh = (n) => 'AED ' + aedFmt.format(Math.abs(n));
+  const dh = (n) => aedFmt.format(Math.abs(n));
   const aedLine = (n) => (n != null ? `<span class="aed">${dh(n)}</span>` : '');
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -31,7 +31,7 @@
   }
   function billLine(e) {
     return e.aed != null
-      ? `${dh(e.aed)} × ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)} = ${rupees(e.inr)}`
+      ? `AED ${dh(e.aed)} × ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)} = ${rupees(e.inr)}`
       : `${rupees(e.inr)}, charged in INR`;
   }
   function expenseDetail(e, me) {
@@ -51,10 +51,10 @@
     if (p.kind === 'card' && p.inr > 0) {
       const ups = c.topups.map((t) => `<tr><td>${day(t.when.slice(0, 10))}, ${t.when.slice(11)}</td><td class="num">${dh(t.aed)}</td><td class="num">${rupees(t.inr)}</td></tr>`).join('');
       return `<dl class="facts"><div><dt>Who loaded it</dt><dd>Ani ${rupees(c.ani)} (3 × ₹40,000 + ₹4,290), ${esc(name('bhatnagar'))} ${rupees(c.bhatnagar)} (the rest)</dd></div></dl>
-        <p class="split-head">The four top-ups</p><table class="split"><tbody>${ups}</tbody></table>`;
+        <p class="split-head">The four top-ups</p><table class="split"><thead><tr><th></th><th class="num">AED</th><th class="num">INR</th></tr></thead><tbody>${ups}</tbody></table>`;
     }
     if (p.kind === 'card') {
-      return `<dl class="facts"><div><dt>What happened</dt><dd>${dh(c.withdrawnAED)} was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED), received by ${esc(name('bhatnagar'))}.</dd></div></dl>`;
+      return `<dl class="facts"><div><dt>What happened</dt><dd>AED ${dh(c.withdrawnAED)} was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED), received by ${esc(name('bhatnagar'))}.</dd></div></dl>`;
     }
     const t = D.payments.find((x) => x.kind === 'transfer' && x !== p && x.title.endsWith(name(p.person)) && Math.abs(x.inr) === Math.abs(p.inr));
     const other = t ? name(t.person) : '';
@@ -128,7 +128,7 @@
 
       <section aria-labelledby="h-all">
         <div class="sec-head"><h2 id="h-all">Every expense</h2></div>
-        <div class="entries">${entries}</div>
+        <div class="entries"><div class="e-head"><span>Date</span><span>Expense</span><span>₹ / AED</span></div>${entries}</div>
       </section>`;
   }
 
@@ -208,7 +208,7 @@
           <div class="filters" role="group" aria-label="Show">${btn('all', 'All')}${btn('spent', 'Spent')}${btn('paid', 'Paid in')}</div></div>
         <table class="book">
           <thead><tr><th class="date">Date</th><th>Particulars</th>
-            <th class="num one">Amount</th><th class="num both">AED</th><th class="num both">Spent ₹</th><th class="num both">Paid in ₹</th>${showBal ? '<th class="num both">Balance ₹</th>' : ''}</tr></thead>
+            <th class="num one">₹ / AED</th><th class="num both">AED</th><th class="num both">Spent ₹</th><th class="num both">Paid in ₹</th>${showBal ? '<th class="num both">Balance ₹</th>' : ''}</tr></thead>
           <tbody>${body}</tbody>
           <tfoot><tr><td></td><td>${showBal ? 'Closing balance' : 'Total'}</td>
             <td class="num one">${showBal ? `${plain(bal)} ${side(bal)}` : filter === 'spent' ? '−' + plain(totDr) : (totCr - totDr >= 0 ? '+' : '−') + plain(totCr - totDr)}</td>
