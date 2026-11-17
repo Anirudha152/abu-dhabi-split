@@ -3,6 +3,8 @@
   const aedFmt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
   const rupees = (n) => '₹' + inrFmt.format(Math.round(n));
   const plain = (n) => inrFmt.format(Math.round(Math.abs(n)));
+  const dh = (n) => 'AED ' + aedFmt.format(Math.abs(n));
+  const aedLine = (n) => (n != null ? `<span class="aed">${dh(n)}</span>` : '');
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const day = (d) => (d ? `${+d.slice(8, 10)} ${MONTHS[+d.slice(5, 7) - 1]}` : '—');
@@ -29,12 +31,12 @@
   }
   function billLine(e) {
     return e.aed != null
-      ? `${aedFmt.format(e.aed)} AED × ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)} = ${rupees(e.inr)}`
+      ? `${dh(e.aed)} × ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)} = ${rupees(e.inr)}`
       : `${rupees(e.inr)}, charged in INR`;
   }
   function expenseDetail(e, me) {
     const shares = [...e.shares].sort((a, b) => b.inr - a.inr)
-      .map((s) => `<tr${s.person === me ? ' class="me"' : ''}><td>${link(s.person)}${s.note ? `<span class="sub">${esc(s.note)}</span>` : ''}</td><td class="num">${rupees(s.inr)}</td></tr>`)
+      .map((s) => `<tr${s.person === me ? ' class="me"' : ''}><td>${link(s.person)}${s.note ? `<span class="sub">${esc(s.note)}</span>` : ''}</td><td class="num aed-col">${s.aed != null ? dh(s.aed) : ''}</td><td class="num">${rupees(s.inr)}</td></tr>`)
       .join('');
     return `<dl class="facts">
         <div><dt>Date</dt><dd>${e.date ? day(e.date) + ' 2026' : 'not recorded'}</dd></div>
@@ -42,17 +44,17 @@
         <div><dt>Bill</dt><dd>${esc(billLine(e))}</dd></div>
       </dl>
       <p class="split-head">Split between ${e.shares.length === 1 ? '1 person' : e.shares.length + ' people'}</p>
-      <table class="split"><tbody>${shares}</tbody></table>`;
+      <table class="split">${e.aed != null ? '<thead><tr><th></th><th class="num">AED</th><th class="num">INR</th></tr></thead>' : ''}<tbody>${shares}</tbody></table>`;
   }
   function paymentDetail(p) {
     const c = D.card;
     if (p.kind === 'card' && p.inr > 0) {
-      const ups = c.topups.map((t) => `<tr><td>${day(t.when.slice(0, 10))}, ${t.when.slice(11)}</td><td class="num">${aedFmt.format(t.aed)} AED</td><td class="num">${rupees(t.inr)}</td></tr>`).join('');
+      const ups = c.topups.map((t) => `<tr><td>${day(t.when.slice(0, 10))}, ${t.when.slice(11)}</td><td class="num">${dh(t.aed)}</td><td class="num">${rupees(t.inr)}</td></tr>`).join('');
       return `<dl class="facts"><div><dt>Who loaded it</dt><dd>Ani ${rupees(c.ani)} (3 × ₹40,000 + ₹4,290), ${esc(name('bhatnagar'))} ${rupees(c.bhatnagar)} (the rest)</dd></div></dl>
         <p class="split-head">The four top-ups</p><table class="split"><tbody>${ups}</tbody></table>`;
     }
     if (p.kind === 'card') {
-      return `<dl class="facts"><div><dt>What happened</dt><dd>${aedFmt.format(c.withdrawnAED)} AED was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED), received by ${esc(name('bhatnagar'))}.</dd></div></dl>`;
+      return `<dl class="facts"><div><dt>What happened</dt><dd>${dh(c.withdrawnAED)} was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED), received by ${esc(name('bhatnagar'))}.</dd></div></dl>`;
     }
     const t = D.payments.find((x) => x.kind === 'transfer' && x !== p && x.title.endsWith(name(p.person)) && Math.abs(x.inr) === Math.abs(p.inr));
     const other = t ? name(t.person) : '';
@@ -95,7 +97,7 @@
       .map((e) => {
         return `<details><summary><span class="e-date">${day(e.date)}</span>
           <span><span class="e-title">${esc(e.title)}${chev}</span><span class="sub">${esc(payerText(e))} · ${e.shares.length === 1 ? name(e.shares[0].person) : `${e.shares.length} people`}</span></span>
-          <span class="e-amt">${rupees(e.inr)}</span></summary>
+          <span class="e-amt">${rupees(e.inr)}${aedLine(e.aed)}</span></summary>
           <div class="e-body">${expenseDetail(e)}</div></details>`;
       })
       .join('');
@@ -150,8 +152,7 @@
         const n = e.shares.length;
         const equal = e.shares.every((x) => Math.abs(x.inr - e.shares[0].inr) < 0.01);
         const how = s.note || (n === 1 ? '' : equal ? `split ${n} ways` : `your part of ${rupees(e.inr)}`);
-        const aed = s.aed != null ? `${aedFmt.format(s.aed)} AED` : '';
-        rows.push({ date: e.date, order: e.id + 0.5, type: 'spent', title: e.title, sub: [how, aed, payerText(e, id)].filter(Boolean).join(' · '), dr: s.inr, cr: 0, detail: () => expenseDetail(e, id) });
+        rows.push({ date: e.date, order: e.id + 0.5, type: 'spent', title: e.title, sub: [how, payerText(e, id)].filter(Boolean).join(' · '), dr: s.inr, cr: 0, aed: s.aed, detail: () => expenseDetail(e, id) });
       });
     });
     D.payments.forEach((p) => {
@@ -160,7 +161,8 @@
       const title = p.kind === 'expense' ? `Paid: ${p.title}` : p.title;
       const sub = e ? `the whole bill, shared by ${e.shares.length === 1 ? name(e.shares[0].person) : e.shares.length + ' people'}` : p.kind === 'transfer' ? (p.inr < 0 ? 'cash received' : 'cash') : 'forex card';
       const order = p.kind === 'card' && p.date ? 0 : e ? e.id : 9999;
-      rows.push({ date: p.date, order, type: 'paid', title, sub, dr: 0, cr: p.inr, detail: () => (e ? expenseDetail(e, id) : paymentDetail(p)) });
+      const aedPaid = e ? e.aed : p.kind === 'card' ? (p.inr > 0 ? null : D.card.withdrawnAED) : null;
+      rows.push({ date: p.date, order, type: 'paid', title, sub, dr: 0, cr: p.inr, aed: aedPaid, detail: () => (e ? expenseDetail(e, id) : paymentDetail(p)) });
     });
     rows.sort(sorter);
     let bal = 0;
@@ -176,12 +178,13 @@
       ? shown.map((x, i) => `<tr class="line" data-i="${i}">
           <td class="date">${day(x.date)}</td>
           <td><button type="button" class="row-btn" aria-expanded="false" aria-controls="d${i}">${esc(x.title)}${chev}</button>${x.sub ? `<span class="sub">${esc(x.sub)}</span>` : ''}</td>
-          <td class="num amt one ${x.dr ? 'dr' : 'cr'}">${x.dr ? '−' + plain(x.dr) : (x.cr < 0 ? '−' : '+') + plain(x.cr) + recd(x)}${balSub(x.bal)}</td>
+          <td class="num amt one ${x.dr ? 'dr' : 'cr'}">${x.dr ? '−' + plain(x.dr) : (x.cr < 0 ? '−' : '+') + plain(x.cr) + recd(x)}${aedLine(x.aed)}${balSub(x.bal)}</td>
+          <td class="num amt both aed-col">${x.aed != null ? dh(x.aed) : ''}</td>
           <td class="num amt both dr">${x.dr ? plain(x.dr) : ''}</td>
           <td class="num amt both cr">${x.cr ? (x.cr < 0 ? '−' : '') + plain(x.cr) + recd(x) : ''}</td>
           ${showBal ? balCell(x.bal) : ''}</tr>
-          <tr class="detail" id="d${i}" hidden><td colspan="6">${x.detail()}</td></tr>`).join('')
-      : `<tr class="empty-row"><td colspan="6">Nothing here. ${esc(me.name)} didn’t pay for anything directly.</td></tr>`;
+          <tr class="detail" id="d${i}" hidden><td colspan="7">${x.detail()}</td></tr>`).join('')
+      : `<tr class="empty-row"><td colspan="7">Nothing here. ${esc(me.name)} didn’t pay for anything directly.</td></tr>`;
     const totDr = shown.reduce((a, x) => a + x.dr, 0), totCr = shown.reduce((a, x) => a + x.cr, 0);
 
     const btn = (k, label) => `<button type="button" data-filter="${k}" aria-pressed="${filter === k}">${label}</button>`;
@@ -205,11 +208,11 @@
           <div class="filters" role="group" aria-label="Show">${btn('all', 'All')}${btn('spent', 'Spent')}${btn('paid', 'Paid in')}</div></div>
         <table class="book">
           <thead><tr><th class="date">Date</th><th>Particulars</th>
-            <th class="num one">Amount</th><th class="num both">Spent</th><th class="num both">Paid in</th>${showBal ? '<th class="num both">Balance</th>' : ''}</tr></thead>
+            <th class="num one">Amount</th><th class="num both">AED</th><th class="num both">Spent ₹</th><th class="num both">Paid in ₹</th>${showBal ? '<th class="num both">Balance ₹</th>' : ''}</tr></thead>
           <tbody>${body}</tbody>
           <tfoot><tr><td></td><td>${showBal ? 'Closing balance' : 'Total'}</td>
             <td class="num one">${showBal ? `${plain(bal)} ${side(bal)}` : filter === 'spent' ? '−' + plain(totDr) : (totCr - totDr >= 0 ? '+' : '−') + plain(totCr - totDr)}</td>
-            <td class="num both">${plain(totDr)}</td><td class="num both">${plain(totCr)}</td>${showBal ? balCell(bal) : ''}</tr></tfoot>
+            <td class="num both"></td><td class="num both">${plain(totDr)}</td><td class="num both">${plain(totCr)}</td>${showBal ? balCell(bal) : ''}</tr></tfoot>
         </table>
         <a class="back" href="#"><span class="back-arrow">${arrow}</span>Everyone</a>
       </section>`;

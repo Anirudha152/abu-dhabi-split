@@ -189,9 +189,15 @@ th.num { font-family: var(--sans); }
 @media (min-width: 640px) {
   .book .one { display: none; }
   .book .both { display: table-cell; }
-  .book td.both, .book th.both { border-left: 1px solid var(--rule); padding-left: 12px; width: 112px; }
+  .book td.both, .book th.both { border-left: 1px solid var(--rule); padding-left: 12px; width: 108px; }
 }
 .empty-row td { color: var(--ink-soft); padding: 20px 0; }
+
+/* ---------- dirham figures ---------- */
+.aed { display: block; margin-top: 4px; font: 600 13px/1.2 var(--mono); color: #1f5c4a; white-space: nowrap; }
+.aed-col { color: #1f5c4a; font-weight: 600; }
+.split th { font: 600 11px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); padding: 4px 0 4px 12px; border-bottom: 1px solid var(--rule-strong); }
+.split td.aed-col { white-space: nowrap; }
 
 /* ---------- expandable lines ---------- */
 .book tr.line { cursor: pointer; }
@@ -242,5 +248,5 @@ th.num { font-family: var(--sans); }
 
 @media (prefers-reduced-motion: reduce) {
   .stamp.land { animation: none; }
-  .names-grid a { transition: none; }
+  .names-grid a, .chev { transition: none; }
 }
