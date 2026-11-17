@@ -134,31 +134,32 @@ add('2026-11-15', 'Taxi to campus (Platinum)', CARD, 'card', 47, CARD_RATE, eq('
 # ---------------- Nitye's cash (AED @ 26.15) ----------------
 NC = 'Nitye, cash'
 add('2026-11-15', 'Global Street entry', NC, 'nitye', 180, DEFAULT_RATE, eq('ani', 'nitye', 'baid', 'sanket', 'sumit', 'nehal'))
-add(None, 'Books 157 + dinner 100', NC, 'nitye', 257, DEFAULT_RATE, eq('bhatnagar'))
-add(None, 'Cash for Mansi', NC, 'nitye', 70, DEFAULT_RATE, eq('mansi'))
-add(None, 'Cash for Gaurish', NC, 'nitye', 50, DEFAULT_RATE, eq('gaurish'))
-add(None, 'Cash for Kavya', NC, 'nitye', 50, DEFAULT_RATE, eq('kavya'))
-add(None, 'Taxi', NC, 'nitye', 90, DEFAULT_RATE, eq('ani', 'sumit'))
-add(None, 'Taxi', NC, 'nitye', 90, DEFAULT_RATE, eq('nitye', 'bhatnagar'))
+add('2026-11-13', 'Books 157 + dinner 100', NC, 'nitye', 257, DEFAULT_RATE, eq('bhatnagar'))
+add('2026-11-13', 'Cash for Mansi', NC, 'nitye', 70, DEFAULT_RATE, eq('mansi'))
+add('2026-11-13', 'Cash for Gaurish', NC, 'nitye', 50, DEFAULT_RATE, eq('gaurish'))
+add('2026-11-13', 'Cash for Kavya', NC, 'nitye', 50, DEFAULT_RATE, eq('kavya'))
+add('2026-11-13', 'Taxi to Galleria Mall', NC, 'nitye', 90, DEFAULT_RATE, eq('ani', 'sumit'))
+add('2026-11-13', 'Taxis, 90 AED each', NC, 'nitye', 180, DEFAULT_RATE, {'nitye': 90, 'bhatnagar': 90},
+    notes={'nitye': 'your own cab', 'bhatnagar': 'your own cab'})
 dtf = itemised('2026-11-14', 'Din Tai Fung, Galleria', NC, 'nitye', 328, DEFAULT_RATE, [
     ('Nitye’s share', 60, 'nitye'), ('L Baid’s share', 52, 'baid'), ('L Bhatnagar’s share', 54, 'bhatnagar'),
     ('Mansi’s share', 54, 'mansi'), ('Gaurish’s share', 54, 'gaurish'), ('Kavya’s share', 54, 'kavya')])
 
 # ---------------- Paid directly by individuals ----------------
-add(None, 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, None,
+add('2026-11-15', 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, None,
     eq('ani', 'kavya', 'mansi', 'baid', 'bhatnagar', 'nitye', 'gaurish'), inr=57666)
 add('2026-11-15', 'Taxi, Global Street to Dubai beach', 'Sanket, card', 'sanket', 70, 1838 / 70,
     eq('sanket', 'bhatnagar', 'nitye', 'arnav', 'anushree', 'kavya'), inr=1838)
 add('2026-11-15', 'Go-karting, Yas', 'Gaurish', 'gaurish', 980, DEFAULT_RATE,
     eq('ani', 'nitye', 'mansi', 'gaurish', 'bhatnagar', 'baid', 'kavya'))
 BS = 'L Baid'
-add(None, 'Mosque', BS, 'baid', 30, BAID_RATE, eq('sanket', 'nehal', 'baid'))
+add('2026-11-13', 'Mosque', BS, 'baid', 30, BAID_RATE, eq('sanket', 'nehal', 'baid'))
 add('2026-11-14', 'Taxi to Din Tai Fung', BS, 'baid', 78, BAID_RATE, eq('nitye', 'mansi', 'bhatnagar', 'baid', 'kavya', 'gaurish'))
-add(None, 'Taxi, AD Mall to hostel', BS, 'baid', 67, BAID_RATE, eq('nitye', 'gaurish', 'baid'))
+add('2026-11-13', 'Taxi, Galleria Mall to hostel', BS, 'baid', 67, BAID_RATE, eq('nitye', 'gaurish', 'baid'))
 add('2026-11-15', 'Taxi back from Dubai', 'L Baid, card', 'baid', 286, 7540 / 286,
     eq('bhatnagar', 'kavya', 'gaurish', 'baid', 'nehal', 'sumit'), inr=7540)
 add('2026-11-15', 'Chips at go-karting', BS, 'baid', 10, BAID_RATE, eq('kavya'))
-add(None, 'Lebanese Roaster chocolates', BS, 'baid', 298, BAID_RATE, {'bhatnagar': 193, 'baid': 105})
+add('2026-11-15', 'Lebanese Roaster chocolates', BS, 'baid', 298, BAID_RATE, {'bhatnagar': 193, 'baid': 105})
 add('2026-11-16', 'Taxi from Delhi airport', 'Ani, cash', 'ani', None, None, eq('ani', 'bhatnagar', 'nitye'), inr=605)
 
 # ---------------- Payments in ----------------
@@ -166,14 +167,14 @@ def pay(person, inr, title, kind, date=None, expense=None):
     payments.append({'person': person, 'inr': inr, 'title': title, 'kind': kind, 'date': date, 'expense': expense})
 pay('ani', ANI_LOADED, 'Loaded the forex card (3 × ₹40,000 + ₹4,290)', 'card', '2026-11-12')
 pay('bhatnagar', BHATNAGAR_LOADED, 'Loaded the forex card (rest of the top-ups)', 'card', '2026-11-12')
-pay('bhatnagar', -WITHDRAW_INR, f'Got back the forex card leftover ({WITHDRAW_AED} AED)', 'card')
+pay('bhatnagar', -WITHDRAW_INR, f'Got back the forex card leftover ({WITHDRAW_AED} AED)', 'card', '2026-11-16')
 for e in expenses:
     if e['payer'] != 'card':
         pay(e['payer'], e['inr'], e['title'], 'expense', e['date'], e['id'])
 TRANSFERS = [('kavya', 'bhatnagar', 9000), ('mansi', 'bhatnagar', 9000), ('baid', 'bhatnagar', 9000), ('gaurish', 'bhatnagar', 8200)]
 for frm, to, amt in TRANSFERS:
-    pay(frm, amt, f'Cash to {NAMES[to]}', 'transfer')
-    pay(to, -amt, f'Cash from {NAMES[frm]}', 'transfer')
+    pay(frm, amt, f'Cash to {NAMES[to]}', 'transfer', '2026-11-15')
+    pay(to, -amt, f'Cash from {NAMES[frm]}', 'transfer', '2026-11-15')
 
 # ---------------- Checks ----------------
 ok = True
@@ -212,22 +213,25 @@ rounded = {p: round(net[p]) for p in PEOPLE}
 drift = sum(rounded.values())
 if drift:  # push the rounding rupee(s) onto the biggest creditor
     top = max(PEOPLE, key=lambda p: rounded[p]); rounded[top] -= drift
-# Plan chosen so everyone who owes a small amount pays exactly one person; only the three
-# largest debtors make a second payment. Still 11 payments, the minimum for these balances.
+# Settle so that small debts are paid whole to one person: each smaller creditor (largest first) is filled by
+# debtors whose entire debt fits, the largest remaining debtor tops up any gap, and everyone
+# left pays the biggest creditor.
 def owe(p): return -rounded[p]
-settle = [
-    {'from': 'mansi', 'to': 'gaurish', 'inr': rounded['gaurish']},
-    {'from': 'mansi', 'to': 'ani', 'inr': owe('mansi') - rounded['gaurish']},
-    {'from': 'kavya', 'to': 'nitye', 'inr': rounded['nitye']},
-    {'from': 'kavya', 'to': 'ani', 'inr': owe('kavya') - rounded['nitye']},
-]
-to_bh = ['nehal']
-settle += [{'from': p, 'to': 'bhatnagar', 'inr': owe(p)} for p in to_bh]
-rest_bh = rounded['bhatnagar'] - sum(owe(p) for p in to_bh)
-settle += [{'from': 'sanket', 'to': 'bhatnagar', 'inr': rest_bh},
-           {'from': 'sanket', 'to': 'ani', 'inr': owe('sanket') - rest_bh},
-]
-settle += [{'from': p, 'to': 'ani', 'inr': owe(p)} for p in ['sumit', 'arnav', 'anushree', 'baid']]
+debt = {p: owe(p) for p in PEOPLE if owe(p) > 0}
+creditors = sorted((p for p in PEOPLE if rounded[p] > 0), key=lambda p: -rounded[p])
+big, smaller = creditors[0], creditors[1:]
+settle = []
+for c in smaller:
+    need = rounded[c]
+    for d in sorted(debt, key=lambda d: debt[d]):
+        if 0 < debt[d] <= need:
+            settle.append({'from': d, 'to': c, 'inr': debt[d]}); need -= debt[d]; debt[d] = 0
+    if need:
+        payers = {x['from'] for x in settle}
+        fresh = [d for d in debt if debt[d] >= need and d not in payers]  # spread gaps so nobody pays three people
+        d = max(fresh or debt, key=lambda d: debt[d])
+        settle.append({'from': d, 'to': c, 'inr': need}); debt[d] -= need
+settle += [{'from': d, 'to': big, 'inr': v} for d, v in debt.items() if v > 0]
 assert all(x['inr'] > 0 for x in settle), settle
 owes_total = {p: owe(p) for p in PEOPLE}
 settle.sort(key=lambda x: (-owes_total[x['from']], -x['inr']))

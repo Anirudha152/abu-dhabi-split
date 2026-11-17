@@ -57,16 +57,16 @@
   {
    "id": "bhatnagar",
    "name": "L Bhatnagar",
-   "spent": 30456.36,
+   "spent": 31633.11,
    "paid": 35596.0,
-   "net": 5139.64
+   "net": 3962.89
   },
   {
    "id": "nitye",
    "name": "Nitye",
-   "spent": 29034.82,
-   "paid": 29157.25,
-   "net": 122.43
+   "spent": 30211.57,
+   "paid": 31510.75,
+   "net": 1299.18
   },
   {
    "id": "mansi",
@@ -1433,7 +1433,7 @@
   },
   {
    "id": 28,
-   "date": null,
+   "date": "2026-11-13",
    "title": "Books 157 + dinner 100",
    "source": "Nitye, cash",
    "payer": "nitye",
@@ -1452,7 +1452,7 @@
   },
   {
    "id": 29,
-   "date": null,
+   "date": "2026-11-13",
    "title": "Cash for Mansi",
    "source": "Nitye, cash",
    "payer": "nitye",
@@ -1471,7 +1471,7 @@
   },
   {
    "id": 30,
-   "date": null,
+   "date": "2026-11-13",
    "title": "Cash for Gaurish",
    "source": "Nitye, cash",
    "payer": "nitye",
@@ -1490,7 +1490,7 @@
   },
   {
    "id": 31,
-   "date": null,
+   "date": "2026-11-13",
    "title": "Cash for Kavya",
    "source": "Nitye, cash",
    "payer": "nitye",
@@ -1509,8 +1509,8 @@
   },
   {
    "id": 32,
-   "date": null,
-   "title": "Taxi",
+   "date": "2026-11-13",
+   "title": "Taxi to Galleria Mall",
    "source": "Nitye, cash",
    "payer": "nitye",
    "aed": 90,
@@ -1534,25 +1534,25 @@
   },
   {
    "id": 33,
-   "date": null,
-   "title": "Taxi",
+   "date": "2026-11-13",
+   "title": "Taxis, 90 AED each",
    "source": "Nitye, cash",
    "payer": "nitye",
-   "aed": 90,
+   "aed": 180,
    "rate": 26.15,
-   "inr": 2353.5,
+   "inr": 4707.0,
    "shares": [
     {
      "person": "nitye",
-     "aed": 45.0,
-     "inr": 1176.75,
-     "note": ""
+     "aed": 90.0,
+     "inr": 2353.5,
+     "note": "your own cab"
     },
     {
      "person": "bhatnagar",
-     "aed": 45.0,
-     "inr": 1176.75,
-     "note": ""
+     "aed": 90.0,
+     "inr": 2353.5,
+     "note": "your own cab"
     }
    ],
    "items": []
@@ -1651,7 +1651,7 @@
   },
   {
    "id": 35,
-   "date": null,
+   "date": "2026-11-15",
    "title": "Warner Bros. World",
    "source": "L Bhatnagar, card",
    "payer": "bhatnagar",
@@ -1810,7 +1810,7 @@
   },
   {
    "id": 38,
-   "date": null,
+   "date": "2026-11-13",
    "title": "Mosque",
    "source": "L Baid",
    "payer": "baid",
@@ -1890,8 +1890,8 @@
   },
   {
    "id": 40,
-   "date": null,
-   "title": "Taxi, AD Mall to hostel",
+   "date": "2026-11-13",
+   "title": "Taxi, Galleria Mall to hostel",
    "source": "L Baid",
    "payer": "baid",
    "aed": 67,
@@ -1989,7 +1989,7 @@
   },
   {
    "id": 43,
-   "date": null,
+   "date": "2026-11-15",
    "title": "Lebanese Roaster chocolates",
    "source": "L Baid",
    "payer": "baid",
@@ -2066,7 +2066,7 @@
    "inr": -5250,
    "title": "Got back the forex card leftover (212.82 AED)",
    "kind": "card",
-   "date": null,
+   "date": "2026-11-16",
    "expense": null
   },
   {
@@ -2082,7 +2082,7 @@
    "inr": 6720.55,
    "title": "Books 157 + dinner 100",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 28
   },
   {
@@ -2090,7 +2090,7 @@
    "inr": 1830.5,
    "title": "Cash for Mansi",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 29
   },
   {
@@ -2098,7 +2098,7 @@
    "inr": 1307.5,
    "title": "Cash for Gaurish",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 30
   },
   {
@@ -2106,23 +2106,23 @@
    "inr": 1307.5,
    "title": "Cash for Kavya",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 31
   },
   {
    "person": "nitye",
    "inr": 2353.5,
-   "title": "Taxi",
+   "title": "Taxi to Galleria Mall",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 32
   },
   {
    "person": "nitye",
-   "inr": 2353.5,
-   "title": "Taxi",
+   "inr": 4707.0,
+   "title": "Taxis, 90 AED each",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 33
   },
   {
@@ -2138,7 +2138,7 @@
    "inr": 57666,
    "title": "Warner Bros. World",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-15",
    "expense": 35
   },
   {
@@ -2162,7 +2162,7 @@
    "inr": 790.8,
    "title": "Mosque",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 38
   },
   {
@@ -2176,9 +2176,9 @@
   {
    "person": "baid",
    "inr": 1766.12,
-   "title": "Taxi, AD Mall to hostel",
+   "title": "Taxi, Galleria Mall to hostel",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-13",
    "expense": 40
   },
   {
@@ -2202,7 +2202,7 @@
    "inr": 7855.28,
    "title": "Lebanese Roaster chocolates",
    "kind": "expense",
-   "date": null,
+   "date": "2026-11-15",
    "expense": 43
   },
   {
@@ -2218,7 +2218,7 @@
    "inr": 9000,
    "title": "Cash to L Bhatnagar",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2226,7 +2226,7 @@
    "inr": -9000,
    "title": "Cash from Kavya",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2234,7 +2234,7 @@
    "inr": 9000,
    "title": "Cash to L Bhatnagar",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2242,7 +2242,7 @@
    "inr": -9000,
    "title": "Cash from Mansi",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2250,7 +2250,7 @@
    "inr": 9000,
    "title": "Cash to L Bhatnagar",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2258,7 +2258,7 @@
    "inr": -9000,
    "title": "Cash from L Baid",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2266,7 +2266,7 @@
    "inr": 8200,
    "title": "Cash to L Bhatnagar",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   },
   {
@@ -2274,7 +2274,7 @@
    "inr": -8200,
    "title": "Cash from Gaurish",
    "kind": "transfer",
-   "date": null,
+   "date": "2026-11-15",
    "expense": null
   }
  ],
@@ -2282,32 +2282,32 @@
   {
    "from": "mansi",
    "to": "ani",
-   "inr": 27841
+   "inr": 28339
   },
   {
    "from": "mansi",
-   "to": "gaurish",
-   "inr": 1067
+   "to": "bhatnagar",
+   "inr": 569
   },
   {
    "from": "kavya",
    "to": "ani",
-   "inr": 27068
+   "inr": 25891
   },
   {
    "from": "kavya",
    "to": "nitye",
-   "inr": 122
+   "inr": 1299
   },
   {
    "from": "sanket",
    "to": "ani",
-   "inr": 14605
+   "inr": 13658
   },
   {
    "from": "sanket",
-   "to": "bhatnagar",
-   "inr": 120
+   "to": "gaurish",
+   "inr": 1067
   },
   {
    "from": "sumit",
@@ -2316,24 +2316,24 @@
   },
   {
    "from": "nehal",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 5020
   },
   {
    "from": "arnav",
-   "to": "ani",
+   "to": "bhatnagar",
    "inr": 1524
   },
   {
    "from": "anushree",
-   "to": "ani",
+   "to": "bhatnagar",
    "inr": 1524
   },
   {
    "from": "baid",
-   "to": "ani",
+   "to": "bhatnagar",
    "inr": 346
   }
  ],
- "totalSpent": 272585.13
+ "totalSpent": 274938.63
 }
