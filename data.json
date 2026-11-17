@@ -1,0 +1,2317 @@
+{
+ "trip": {
+  "name": "Abu Dhabi & Dubai",
+  "dates": "12–16 Nov 2026"
+ },
+ "rates": {
+  "card": 26.12954871291722,
+  "cash": 26.15,
+  "baid": 26.36
+ },
+ "card": {
+  "loadedAED": 5472,
+  "loadedINR": 142670,
+  "withdrawnAED": 212.82,
+  "withdrawnINR": 5250,
+  "spentAED": 5259.18,
+  "ani": 124290,
+  "bhatnagar": 18380
+ },
+ "people": [
+  {
+   "id": "ani",
+   "name": "Ani",
+   "spent": 45200.35,
+   "paid": 119645.0,
+   "net": 74444.65
+  },
+  {
+   "id": "baid",
+   "name": "Baid",
+   "spent": 29617.46,
+   "paid": 29271.88,
+   "net": -345.58
+  },
+  {
+   "id": "bhatnagar",
+   "name": "Bhatnagar",
+   "spent": 30456.36,
+   "paid": 40846.0,
+   "net": 10389.64
+  },
+  {
+   "id": "nitye",
+   "name": "Nitye",
+   "spent": 29034.82,
+   "paid": 29157.25,
+   "net": 122.43
+  },
+  {
+   "id": "mansi",
+   "name": "Mansi",
+   "spent": 37908.41,
+   "paid": 9000.0,
+   "net": -28908.41
+  },
+  {
+   "id": "gaurish",
+   "name": "Gaurish",
+   "spent": 32760.0,
+   "paid": 33827.0,
+   "net": 1067.0
+  },
+  {
+   "id": "kavya",
+   "name": "Kavya",
+   "spent": 36190.16,
+   "paid": 9000.0,
+   "net": -27190.16
+  },
+  {
+   "id": "sanket",
+   "name": "Sanket",
+   "spent": 16563.44,
+   "paid": 1838.0,
+   "net": -14725.44
+  },
+  {
+   "id": "sumit",
+   "name": "Sumit",
+   "spent": 6787.0,
+   "paid": 0.0,
+   "net": -6787.0
+  },
+  {
+   "id": "nehal",
+   "name": "Nehal",
+   "spent": 5020.06,
+   "paid": 0.0,
+   "net": -5020.06
+  },
+  {
+   "id": "arnav",
+   "name": "Arnav",
+   "spent": 1523.53,
+   "paid": 0.0,
+   "net": -1523.53
+  },
+  {
+   "id": "anushree",
+   "name": "Anushree",
+   "spent": 1523.53,
+   "paid": 0.0,
+   "net": -1523.53
+  }
+ ],
+ "expenses": [
+  {
+   "id": 1,
+   "date": "2026-11-13",
+   "title": "Khalidya Branch",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 3.24,
+   "rate": 26.12954871291722,
+   "inr": 84.66,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 3.24,
+     "inr": 84.66,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 2,
+   "date": "2026-11-13",
+   "title": "McDonald's (ADNOC)",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 34,
+   "rate": 26.12954871291722,
+   "inr": 888.4,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 11.0,
+     "inr": 287.43,
+     "note": ""
+    },
+    {
+     "person": "ani",
+     "aed": 23.0,
+     "inr": 600.98,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 3,
+   "date": "2026-11-13",
+   "title": "McDonald's (ADNOC)",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 24,
+   "rate": 26.12954871291722,
+   "inr": 627.11,
+   "shares": [
+    {
+     "person": "bhatnagar",
+     "aed": 24.0,
+     "inr": 627.11,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 4,
+   "date": "2026-11-13",
+   "title": "Coffee, Jackson Trading",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 2,
+   "rate": 26.12954871291722,
+   "inr": 52.26,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 2.0,
+     "inr": 52.26,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 5,
+   "date": "2026-11-13",
+   "title": "Coffee, Jackson Trading",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 2,
+   "rate": 26.12954871291722,
+   "inr": 52.26,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 2.0,
+     "inr": 52.26,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 6,
+   "date": "2026-11-13",
+   "title": "Coffee, Jackson Trading",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 2,
+   "rate": 26.12954871291722,
+   "inr": 52.26,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 2.0,
+     "inr": 52.26,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 7,
+   "date": "2026-11-14",
+   "title": "Five Guys",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 73,
+   "rate": 26.12954871291722,
+   "inr": 1907.46,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 73.0,
+     "inr": 1907.46,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 8,
+   "date": "2026-11-14",
+   "title": "Pizza Hut, The Galleria",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 59.8,
+   "rate": 26.12954871291722,
+   "inr": 1562.55,
+   "shares": [
+    {
+     "person": "kavya",
+     "aed": 29.9,
+     "inr": 781.27,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 29.9,
+     "inr": 781.27,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 9,
+   "date": "2026-11-14",
+   "title": "Taxi (Hazrat Bilal)",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 98.7,
+   "rate": 26.12954871291722,
+   "inr": 2578.99,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 24.68,
+     "inr": 644.75,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 24.68,
+     "inr": 644.75,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 24.68,
+     "inr": 644.75,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 24.68,
+     "inr": 644.75,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 10,
+   "date": "2026-11-14",
+   "title": "Taxi, Arabia Taxi Abu Dhabi",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 270,
+   "rate": 26.12954871291722,
+   "inr": 7054.98,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 54.0,
+     "inr": 1411.0,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 54.0,
+     "inr": 1411.0,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 54.0,
+     "inr": 1411.0,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 54.0,
+     "inr": 1411.0,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 54.0,
+     "inr": 1411.0,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 11,
+   "date": "2026-11-14",
+   "title": "Emaar, Burj Khalifa",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 1095,
+   "rate": 26.12954871291722,
+   "inr": 28611.86,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 219.0,
+     "inr": 5722.37,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 219.0,
+     "inr": 5722.37,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 219.0,
+     "inr": 5722.37,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 219.0,
+     "inr": 5722.37,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 219.0,
+     "inr": 5722.37,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 12,
+   "date": "2026-11-14",
+   "title": "At The Top",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 25,
+   "rate": 26.12954871291722,
+   "inr": 653.24,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 25.0,
+     "inr": 653.24,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 13,
+   "date": "2026-11-14",
+   "title": "At The Top",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 137,
+   "rate": 26.12954871291722,
+   "inr": 3579.75,
+   "shares": [
+    {
+     "person": "kavya",
+     "aed": 137.0,
+     "inr": 3579.75,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 14,
+   "date": "2026-11-14",
+   "title": "At The Top",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 57,
+   "rate": 26.12954871291722,
+   "inr": 1489.38,
+   "shares": [
+    {
+     "person": "gaurish",
+     "aed": 57.0,
+     "inr": 1489.38,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 15,
+   "date": "2026-11-14",
+   "title": "Rosa's Thai, Dubai Mall",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 668,
+   "rate": 26.12954871291722,
+   "inr": 17454.54,
+   "shares": [
+    {
+     "person": "mansi",
+     "aed": 105.0,
+     "inr": 2743.6,
+     "note": "Thai Fried Chicken Wings, plate 1, Green Curry Prawn"
+    },
+    {
+     "person": "sumit",
+     "aed": 84.5,
+     "inr": 2207.95,
+     "note": "Thai Fried Chicken Wings, half plate, Drunken Noodle Minced Chicken"
+    },
+    {
+     "person": "gaurish",
+     "aed": 85.5,
+     "inr": 2234.08,
+     "note": "Thai Fried Chicken Wings, half plate, Drunken Noodle Prawn"
+    },
+    {
+     "person": "ani",
+     "aed": 110.5,
+     "inr": 2887.32,
+     "note": "Milky Thai Bubble Tea, Rosa's Homemade Spring Rolls (1/2), Pad Thai Veg & Tofu + extra fried egg"
+    },
+    {
+     "person": "baid",
+     "aed": 86.0,
+     "inr": 2247.14,
+     "note": "Passionfruit & Strawberry Bubble Tea, Chilli & Basil Pad Kra Prow Veg & Tofu (1/2), Green Curry Veg & Tofu (1/2)"
+    },
+    {
+     "person": "nehal",
+     "aed": 76.5,
+     "inr": 1998.91,
+     "note": "Rosa's Homemade Spring Rolls (1/2), Chilli & Basil Pad Kra Prow Veg & Tofu (1/2), Green Curry Veg & Tofu (1/2)"
+    },
+    {
+     "person": "kavya",
+     "aed": 60.0,
+     "inr": 1567.77,
+     "note": "Green Curry Sliced Chicken (1/2), Hainanese-Style Chicken Rice (1/2)"
+    },
+    {
+     "person": "sanket",
+     "aed": 60.0,
+     "inr": 1567.77,
+     "note": "Green Curry Sliced Chicken (1/2), Hainanese-Style Chicken Rice (1/2)"
+    }
+   ],
+   "items": [
+    {
+     "name": "Thai Fried Chicken Wings, plate 1",
+     "aed": 37.0,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Thai Fried Chicken Wings, half plate",
+     "aed": 18.5,
+     "who": [
+      "sumit"
+     ]
+    },
+    {
+     "name": "Thai Fried Chicken Wings, half plate",
+     "aed": 18.5,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "Milky Thai Bubble Tea",
+     "aed": 27.0,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Passionfruit & Strawberry Bubble Tea",
+     "aed": 27.0,
+     "who": [
+      "baid"
+     ]
+    },
+    {
+     "name": "Rosa's Homemade Spring Rolls",
+     "aed": 35.0,
+     "who": [
+      "ani",
+      "nehal"
+     ]
+    },
+    {
+     "name": "Pad Thai Veg & Tofu + extra fried egg",
+     "aed": 66.0,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Chilli & Basil Pad Kra Prow Veg & Tofu",
+     "aed": 59.0,
+     "who": [
+      "nehal",
+      "baid"
+     ]
+    },
+    {
+     "name": "Green Curry Prawn",
+     "aed": 68.0,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Green Curry Sliced Chicken",
+     "aed": 67.0,
+     "who": [
+      "kavya",
+      "sanket"
+     ]
+    },
+    {
+     "name": "Hainanese-Style Chicken Rice",
+     "aed": 53.0,
+     "who": [
+      "kavya",
+      "sanket"
+     ]
+    },
+    {
+     "name": "Drunken Noodle Minced Chicken",
+     "aed": 66.0,
+     "who": [
+      "sumit"
+     ]
+    },
+    {
+     "name": "Drunken Noodle Prawn",
+     "aed": 67.0,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "Green Curry Veg & Tofu",
+     "aed": 59.0,
+     "who": [
+      "nehal",
+      "baid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "date": "2026-11-15",
+   "title": "Al Jaber Gallery",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 1219,
+   "rate": 26.12954871291722,
+   "inr": 31851.92,
+   "shares": [
+    {
+     "person": "mansi",
+     "aed": 322.91,
+     "inr": 8437.59,
+     "note": "2× Asst Chocolate Dates Rual, I Love Dubai Choco Dates, Lattafa Badee Al Oud Noble, Jomara Organic Dates Pistachio, Jomara Organic Dates, Al Mealim Deli Arabic (gift for Shilpi ma'am) (1/5)"
+    },
+    {
+     "person": "kavya",
+     "aed": 217.97,
+     "inr": 5695.38,
+     "note": "2× Asst Chocolate Dates Rual, Al Mealim Deli Arabic (gift for Shilpi ma'am) (1/5), Hazelnut Kunafa Chocolate, ILD Milk Pistachio Kunafa, Camel Milk Pistachio Kunafa, Lighter Stone"
+    },
+    {
+     "person": "sanket",
+     "aed": 259.23,
+     "inr": 6773.51,
+     "note": "2× Asst Chocolate Dates Rual, Hazelnut Kunafa Chocolate, ILD Milk Pistachio Kunafa, 2× Al Mealim Lux Arabic Sweets, ILD Sugar Free Dark Pistachio, SP Lighter w/ USB"
+    },
+    {
+     "person": "ani",
+     "aed": 225.14,
+     "inr": 5882.88,
+     "note": "Jomara Organic Dates, Al Mealim Deli Arabic (gift for Shilpi ma'am) (1/5), Hazelnut Kunafa Chocolate, ILD Milk Pistachio Kunafa, MC Dub USB Lighter"
+    },
+    {
+     "person": "gaurish",
+     "aed": 183.88,
+     "inr": 4804.74,
+     "note": "Al Mealim Deli Arabic (gift for Shilpi ma'am) (1/5), 3× ILD Milk Pistachio Kunafa (35), 2× GP Bracelet, ER Earrings"
+    },
+    {
+     "person": "baid",
+     "aed": 9.87,
+     "inr": 257.82,
+     "note": "Al Mealim Deli Arabic (gift for Shilpi ma'am) (1/5)"
+    }
+   ],
+   "items": [
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "kavya"
+     ]
+    },
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "kavya"
+     ]
+    },
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "Asst Chocolate Dates Rual",
+     "aed": 26.01,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "I Love Dubai Choco Dates",
+     "aed": 49.33,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Lattafa Badee Al Oud Noble",
+     "aed": 151.59,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Jomara Organic Dates Pistachio",
+     "aed": 28.7,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Jomara Organic Dates",
+     "aed": 31.39,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Jomara Organic Dates",
+     "aed": 31.39,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Al Mealim Deli Arabic (gift for Shilpi ma'am)",
+     "aed": 49.33,
+     "who": [
+      "ani",
+      "mansi",
+      "kavya",
+      "gaurish",
+      "baid"
+     ]
+    },
+    {
+     "name": "Hazelnut Kunafa Chocolate",
+     "aed": 49.33,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Hazelnut Kunafa Chocolate",
+     "aed": 49.33,
+     "who": [
+      "kavya"
+     ]
+    },
+    {
+     "name": "Hazelnut Kunafa Chocolate",
+     "aed": 49.33,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa",
+     "aed": 49.33,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa",
+     "aed": 49.33,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa",
+     "aed": 49.33,
+     "who": [
+      "kavya"
+     ]
+    },
+    {
+     "name": "MC Dub USB Lighter",
+     "aed": 85.21,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Camel Milk Pistachio Kunafa",
+     "aed": 31.39,
+     "who": [
+      "kavya"
+     ]
+    },
+    {
+     "name": "Al Mealim Lux Arabic Sweets",
+     "aed": 11.66,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "Al Mealim Lux Arabic Sweets",
+     "aed": 11.66,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "ILD Sugar Free Dark Pistachio",
+     "aed": 31.39,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "SP Lighter w/ USB",
+     "aed": 53.82,
+     "who": [
+      "sanket"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa (35)",
+     "aed": 31.39,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa (35)",
+     "aed": 31.39,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "ILD Milk Pistachio Kunafa (35)",
+     "aed": 31.39,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "GP Bracelet",
+     "aed": 22.42,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "GP Bracelet",
+     "aed": 22.42,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "ER Earrings",
+     "aed": 34.98,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "Lighter Stone",
+     "aed": 26.01,
+     "who": [
+      "kavya"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "date": "2026-11-15",
+   "title": "Taxi to Global Street",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 97.5,
+   "rate": 26.12954871291722,
+   "inr": 2547.63,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    },
+    {
+     "person": "nehal",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    },
+    {
+     "person": "sanket",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 16.25,
+     "inr": 424.61,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 18,
+   "date": "2026-11-15",
+   "title": "Perfume, Thouq Al Hawameer",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 350,
+   "rate": 26.12954871291722,
+   "inr": 9145.34,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 225.0,
+     "inr": 5879.15,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 125.0,
+     "inr": 3266.19,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 19,
+   "date": "2026-11-15",
+   "title": "Perfume, Thouq Al Hawameer",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 200,
+   "rate": 26.12954871291722,
+   "inr": 5225.91,
+   "shares": [
+    {
+     "person": "sanket",
+     "aed": 200.0,
+     "inr": 5225.91,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 20,
+   "date": "2026-11-15",
+   "title": "Taxi to the beach",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 67,
+   "rate": 26.12954871291722,
+   "inr": 1750.68,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    },
+    {
+     "person": "nehal",
+     "aed": 11.17,
+     "inr": 291.78,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 21,
+   "date": "2026-11-15",
+   "title": "Taxi back from Dubai",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 279.5,
+   "rate": 26.12954871291722,
+   "inr": 7303.21,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    },
+    {
+     "person": "anushree",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    },
+    {
+     "person": "sanket",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    },
+    {
+     "person": "arnav",
+     "aed": 46.58,
+     "inr": 1217.2,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 22,
+   "date": "2026-11-15",
+   "title": "Taxi to Yas circuit (Tawasul)",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 15,
+   "rate": 26.12954871291722,
+   "inr": 391.94,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 5.0,
+     "inr": 130.65,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 5.0,
+     "inr": 130.65,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 5.0,
+     "inr": 130.65,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 23,
+   "date": "2026-11-15",
+   "title": "Perfume, Al Majed for Oud",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 115,
+   "rate": 26.12954871291722,
+   "inr": 3004.9,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 115.0,
+     "inr": 3004.9,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 24,
+   "date": "2026-11-15",
+   "title": "Five Guys",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 98,
+   "rate": 26.12954871291722,
+   "inr": 2560.7,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 73.0,
+     "inr": 1907.46,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 25.0,
+     "inr": 653.24,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 25,
+   "date": "2026-11-15",
+   "title": "Carrefour, Yas Mall",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 220.44,
+   "rate": 26.12954871291722,
+   "inr": 5760.0,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 106.11,
+     "inr": 2772.61,
+     "note": "2× Saray Arabic Sweet, 4× Khat Fard Pouch, 2× Mido Wafer Rolls, Kuche 100g, Plastic bag, RJ Magnet"
+    },
+    {
+     "person": "ani",
+     "aed": 35.47,
+     "inr": 926.82,
+     "note": "Saray Arabic Sweet, 2× Mido Wafer Rolls, Plastic bag"
+    },
+    {
+     "person": "mansi",
+     "aed": 78.86,
+     "inr": 2060.58,
+     "note": "Saray Arabic Sweet, Dates w/ Nuts Premium, Mido Wafer Rolls, Kuche 100g, Plastic bag, RJ Magnet"
+    }
+   ],
+   "items": [
+    {
+     "name": "Saray Arabic Sweet",
+     "aed": 19.99,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Saray Arabic Sweet",
+     "aed": 19.99,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Saray Arabic Sweet",
+     "aed": 19.99,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Saray Arabic Sweet",
+     "aed": 19.99,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Dates w/ Nuts Premium",
+     "aed": 29.39,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Khat Fard Pouch",
+     "aed": 7.29,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Khat Fard Pouch",
+     "aed": 7.29,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Khat Fard Pouch",
+     "aed": 7.29,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Khat Fard Pouch",
+     "aed": 7.29,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Mido Wafer Rolls",
+     "aed": 7.49,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Mido Wafer Rolls",
+     "aed": 7.49,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Mido Wafer Rolls",
+     "aed": 7.49,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Mido Wafer Rolls",
+     "aed": 7.49,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Mido Wafer Rolls",
+     "aed": 7.49,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Kuche 100g",
+     "aed": 15.0,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Kuche 100g",
+     "aed": 15.0,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Plastic bag",
+     "aed": 0.5,
+     "who": [
+      "ani"
+     ]
+    },
+    {
+     "name": "Plastic bag",
+     "aed": 0.5,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Plastic bag",
+     "aed": 0.5,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "RJ Magnet",
+     "aed": 6.49,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "RJ Magnet",
+     "aed": 6.49,
+     "who": [
+      "mansi"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "date": "2026-11-15",
+   "title": "Taxi to campus (Platinum)",
+   "source": "Forex card",
+   "payer": "card",
+   "aed": 47,
+   "rate": 26.12954871291722,
+   "inr": 1228.09,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 15.67,
+     "inr": 409.36,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 15.67,
+     "inr": 409.36,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 15.67,
+     "inr": 409.36,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 27,
+   "date": "2026-11-15",
+   "title": "Global Street entry",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 180,
+   "rate": 26.15,
+   "inr": 4707.0,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    },
+    {
+     "person": "sanket",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    },
+    {
+     "person": "nehal",
+     "aed": 30.0,
+     "inr": 784.5,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 28,
+   "date": null,
+   "title": "Books 157 + dinner 100",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 257,
+   "rate": 26.15,
+   "inr": 6720.55,
+   "shares": [
+    {
+     "person": "bhatnagar",
+     "aed": 257.0,
+     "inr": 6720.55,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 29,
+   "date": null,
+   "title": "Cash for Mansi",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 70,
+   "rate": 26.15,
+   "inr": 1830.5,
+   "shares": [
+    {
+     "person": "mansi",
+     "aed": 70.0,
+     "inr": 1830.5,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 30,
+   "date": null,
+   "title": "Cash for Gaurish",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 50,
+   "rate": 26.15,
+   "inr": 1307.5,
+   "shares": [
+    {
+     "person": "gaurish",
+     "aed": 50.0,
+     "inr": 1307.5,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 31,
+   "date": null,
+   "title": "Cash for Kavya",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 50,
+   "rate": 26.15,
+   "inr": 1307.5,
+   "shares": [
+    {
+     "person": "kavya",
+     "aed": 50.0,
+     "inr": 1307.5,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 32,
+   "date": null,
+   "title": "Taxi",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 90,
+   "rate": 26.15,
+   "inr": 2353.5,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 45.0,
+     "inr": 1176.75,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 45.0,
+     "inr": 1176.75,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 33,
+   "date": null,
+   "title": "Taxi",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 90,
+   "rate": 26.15,
+   "inr": 2353.5,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 45.0,
+     "inr": 1176.75,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 45.0,
+     "inr": 1176.75,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 34,
+   "date": "2026-11-14",
+   "title": "Din Tai Fung, Galleria",
+   "source": "Nitye, cash",
+   "payer": "nitye",
+   "aed": 328,
+   "rate": 26.15,
+   "inr": 8577.2,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 60.0,
+     "inr": 1569.0,
+     "note": "Nitye’s share"
+    },
+    {
+     "person": "baid",
+     "aed": 52.0,
+     "inr": 1359.8,
+     "note": "Baid’s share"
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 54.0,
+     "inr": 1412.1,
+     "note": "Bhatnagar’s share"
+    },
+    {
+     "person": "mansi",
+     "aed": 54.0,
+     "inr": 1412.1,
+     "note": "Mansi’s share"
+    },
+    {
+     "person": "gaurish",
+     "aed": 54.0,
+     "inr": 1412.1,
+     "note": "Gaurish’s share"
+    },
+    {
+     "person": "kavya",
+     "aed": 54.0,
+     "inr": 1412.1,
+     "note": "Kavya’s share"
+    }
+   ],
+   "items": [
+    {
+     "name": "Nitye’s share",
+     "aed": 60.0,
+     "who": [
+      "nitye"
+     ]
+    },
+    {
+     "name": "Baid’s share",
+     "aed": 52.0,
+     "who": [
+      "baid"
+     ]
+    },
+    {
+     "name": "Bhatnagar’s share",
+     "aed": 54.0,
+     "who": [
+      "bhatnagar"
+     ]
+    },
+    {
+     "name": "Mansi’s share",
+     "aed": 54.0,
+     "who": [
+      "mansi"
+     ]
+    },
+    {
+     "name": "Gaurish’s share",
+     "aed": 54.0,
+     "who": [
+      "gaurish"
+     ]
+    },
+    {
+     "name": "Kavya’s share",
+     "aed": 54.0,
+     "who": [
+      "kavya"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "date": null,
+   "title": "Warner Bros. World",
+   "source": "Bhatnagar, card",
+   "payer": "bhatnagar",
+   "aed": null,
+   "rate": null,
+   "inr": 57666,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": null,
+     "inr": 8238.0,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 36,
+   "date": "2026-11-15",
+   "title": "Taxi, Global Street to Dubai beach",
+   "source": "Sanket, card",
+   "payer": "sanket",
+   "aed": 70,
+   "rate": 26.257142857142856,
+   "inr": 1838,
+   "shares": [
+    {
+     "person": "sanket",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    },
+    {
+     "person": "arnav",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    },
+    {
+     "person": "anushree",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 11.67,
+     "inr": 306.33,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 37,
+   "date": "2026-11-15",
+   "title": "Go-karting, Yas",
+   "source": "Gaurish",
+   "payer": "gaurish",
+   "aed": 980,
+   "rate": 26.15,
+   "inr": 25627.0,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 140.0,
+     "inr": 3661.0,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 38,
+   "date": null,
+   "title": "Mosque",
+   "source": "Baid",
+   "payer": "baid",
+   "aed": 30,
+   "rate": 26.36,
+   "inr": 790.8,
+   "shares": [
+    {
+     "person": "sanket",
+     "aed": 10.0,
+     "inr": 263.6,
+     "note": ""
+    },
+    {
+     "person": "nehal",
+     "aed": 10.0,
+     "inr": 263.6,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 10.0,
+     "inr": 263.6,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 39,
+   "date": "2026-11-14",
+   "title": "Taxi to Din Tai Fung",
+   "source": "Baid",
+   "payer": "baid",
+   "aed": 78,
+   "rate": 26.36,
+   "inr": 2056.08,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    },
+    {
+     "person": "mansi",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 13.0,
+     "inr": 342.68,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 40,
+   "date": null,
+   "title": "Taxi, AD Mall to hostel",
+   "source": "Baid",
+   "payer": "baid",
+   "aed": 67,
+   "rate": 26.36,
+   "inr": 1766.12,
+   "shares": [
+    {
+     "person": "nitye",
+     "aed": 22.33,
+     "inr": 588.71,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 22.33,
+     "inr": 588.71,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 22.33,
+     "inr": 588.71,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 41,
+   "date": "2026-11-15",
+   "title": "Taxi back from Dubai",
+   "source": "Baid, card",
+   "payer": "baid",
+   "aed": 286,
+   "rate": 26.363636363636363,
+   "inr": 7540,
+   "shares": [
+    {
+     "person": "bhatnagar",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    },
+    {
+     "person": "kavya",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    },
+    {
+     "person": "gaurish",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    },
+    {
+     "person": "nehal",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    },
+    {
+     "person": "sumit",
+     "aed": 47.67,
+     "inr": 1256.67,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 42,
+   "date": "2026-11-15",
+   "title": "Chips at go-karting",
+   "source": "Baid",
+   "payer": "baid",
+   "aed": 10,
+   "rate": 26.36,
+   "inr": 263.6,
+   "shares": [
+    {
+     "person": "kavya",
+     "aed": 10.0,
+     "inr": 263.6,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 43,
+   "date": null,
+   "title": "Lebanese Roaster chocolates",
+   "source": "Baid",
+   "payer": "baid",
+   "aed": 298,
+   "rate": 26.36,
+   "inr": 7855.28,
+   "shares": [
+    {
+     "person": "bhatnagar",
+     "aed": 193.0,
+     "inr": 5087.48,
+     "note": ""
+    },
+    {
+     "person": "baid",
+     "aed": 105.0,
+     "inr": 2767.8,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 44,
+   "date": "2026-11-16",
+   "title": "Taxi from Delhi airport",
+   "source": "Ani, cash",
+   "payer": "ani",
+   "aed": null,
+   "rate": null,
+   "inr": 605,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": null,
+     "inr": 201.67,
+     "note": ""
+    },
+    {
+     "person": "bhatnagar",
+     "aed": null,
+     "inr": 201.67,
+     "note": ""
+    },
+    {
+     "person": "nitye",
+     "aed": null,
+     "inr": 201.67,
+     "note": ""
+    }
+   ],
+   "items": []
+  }
+ ],
+ "payments": [
+  {
+   "person": "ani",
+   "inr": 124290,
+   "title": "Loaded the forex card (3 × ₹40,000 + ₹4,290)",
+   "kind": "card",
+   "date": "2026-11-12",
+   "expense": null
+  },
+  {
+   "person": "ani",
+   "inr": -5250,
+   "title": "Got back the forex card leftover (212.82 AED)",
+   "kind": "card",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": 18380,
+   "title": "Loaded the forex card (rest of the top-ups)",
+   "kind": "card",
+   "date": "2026-11-12",
+   "expense": null
+  },
+  {
+   "person": "nitye",
+   "inr": 4707.0,
+   "title": "Global Street entry",
+   "kind": "expense",
+   "date": "2026-11-15",
+   "expense": 27
+  },
+  {
+   "person": "nitye",
+   "inr": 6720.55,
+   "title": "Books 157 + dinner 100",
+   "kind": "expense",
+   "date": null,
+   "expense": 28
+  },
+  {
+   "person": "nitye",
+   "inr": 1830.5,
+   "title": "Cash for Mansi",
+   "kind": "expense",
+   "date": null,
+   "expense": 29
+  },
+  {
+   "person": "nitye",
+   "inr": 1307.5,
+   "title": "Cash for Gaurish",
+   "kind": "expense",
+   "date": null,
+   "expense": 30
+  },
+  {
+   "person": "nitye",
+   "inr": 1307.5,
+   "title": "Cash for Kavya",
+   "kind": "expense",
+   "date": null,
+   "expense": 31
+  },
+  {
+   "person": "nitye",
+   "inr": 2353.5,
+   "title": "Taxi",
+   "kind": "expense",
+   "date": null,
+   "expense": 32
+  },
+  {
+   "person": "nitye",
+   "inr": 2353.5,
+   "title": "Taxi",
+   "kind": "expense",
+   "date": null,
+   "expense": 33
+  },
+  {
+   "person": "nitye",
+   "inr": 8577.2,
+   "title": "Din Tai Fung, Galleria",
+   "kind": "expense",
+   "date": "2026-11-14",
+   "expense": 34
+  },
+  {
+   "person": "bhatnagar",
+   "inr": 57666,
+   "title": "Warner Bros. World",
+   "kind": "expense",
+   "date": null,
+   "expense": 35
+  },
+  {
+   "person": "sanket",
+   "inr": 1838,
+   "title": "Taxi, Global Street to Dubai beach",
+   "kind": "expense",
+   "date": "2026-11-15",
+   "expense": 36
+  },
+  {
+   "person": "gaurish",
+   "inr": 25627.0,
+   "title": "Go-karting, Yas",
+   "kind": "expense",
+   "date": "2026-11-15",
+   "expense": 37
+  },
+  {
+   "person": "baid",
+   "inr": 790.8,
+   "title": "Mosque",
+   "kind": "expense",
+   "date": null,
+   "expense": 38
+  },
+  {
+   "person": "baid",
+   "inr": 2056.08,
+   "title": "Taxi to Din Tai Fung",
+   "kind": "expense",
+   "date": "2026-11-14",
+   "expense": 39
+  },
+  {
+   "person": "baid",
+   "inr": 1766.12,
+   "title": "Taxi, AD Mall to hostel",
+   "kind": "expense",
+   "date": null,
+   "expense": 40
+  },
+  {
+   "person": "baid",
+   "inr": 7540,
+   "title": "Taxi back from Dubai",
+   "kind": "expense",
+   "date": "2026-11-15",
+   "expense": 41
+  },
+  {
+   "person": "baid",
+   "inr": 263.6,
+   "title": "Chips at go-karting",
+   "kind": "expense",
+   "date": "2026-11-15",
+   "expense": 42
+  },
+  {
+   "person": "baid",
+   "inr": 7855.28,
+   "title": "Lebanese Roaster chocolates",
+   "kind": "expense",
+   "date": null,
+   "expense": 43
+  },
+  {
+   "person": "ani",
+   "inr": 605,
+   "title": "Taxi from Delhi airport",
+   "kind": "expense",
+   "date": "2026-11-16",
+   "expense": 44
+  },
+  {
+   "person": "kavya",
+   "inr": 9000,
+   "title": "Cash to Bhatnagar",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": -9000,
+   "title": "Cash from Kavya",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "mansi",
+   "inr": 9000,
+   "title": "Cash to Bhatnagar",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": -9000,
+   "title": "Cash from Mansi",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "baid",
+   "inr": 9000,
+   "title": "Cash to Bhatnagar",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": -9000,
+   "title": "Cash from Baid",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "gaurish",
+   "inr": 8200,
+   "title": "Cash to Bhatnagar",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  },
+  {
+   "person": "bhatnagar",
+   "inr": -8200,
+   "title": "Cash from Gaurish",
+   "kind": "transfer",
+   "date": null,
+   "expense": null
+  }
+ ],
+ "settlements": [
+  {
+   "from": "mansi",
+   "to": "ani",
+   "inr": 27841
+  },
+  {
+   "from": "mansi",
+   "to": "gaurish",
+   "inr": 1067
+  },
+  {
+   "from": "kavya",
+   "to": "ani",
+   "inr": 27068
+  },
+  {
+   "from": "kavya",
+   "to": "nitye",
+   "inr": 122
+  },
+  {
+   "from": "sanket",
+   "to": "ani",
+   "inr": 14516
+  },
+  {
+   "from": "sanket",
+   "to": "bhatnagar",
+   "inr": 209
+  },
+  {
+   "from": "sumit",
+   "to": "bhatnagar",
+   "inr": 6787
+  },
+  {
+   "from": "nehal",
+   "to": "ani",
+   "inr": 5020
+  },
+  {
+   "from": "arnav",
+   "to": "bhatnagar",
+   "inr": 1524
+  },
+  {
+   "from": "anushree",
+   "to": "bhatnagar",
+   "inr": 1524
+  },
+  {
+   "from": "baid",
+   "to": "bhatnagar",
+   "inr": 346
+  }
+ ],
+ "totalSpent": 272585.13
+}
