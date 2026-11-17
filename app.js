@@ -24,7 +24,7 @@
 
   function nav(current) {
     document.getElementById('names').innerHTML = D.people
-      .map((p) => `<li><a href="#${p.id}"${p.id === current ? ' aria-current="page"' : ''}>${esc(p.name)}</a></li>`)
+      .map((p) => `<li><a href="#${p.id}"${p.id === current ? ' aria-current="page"' : ''}>${esc(p.name).replace(' ', '&nbsp;')}</a></li>`)
       .join('');
   }
 
@@ -82,9 +82,9 @@
       <section aria-labelledby="h-rates">
         <div class="sec-head"><h2 id="h-rates">How dirhams became rupees</h2></div>
         <dl class="rates">
-          <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out, over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, Bhatnagar ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
+          <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out, over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, ${esc(name('bhatnagar'))} ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
           <div><dt>Nitye’s cash, Gaurish’s go-karting<span class="sub">No rate given, so the agreed default</span></dt><dd>₹${D.rates.cash.toFixed(2)}</dd></div>
-          <div><dt>Baid’s payments in AED</dt><dd>₹${D.rates.baid.toFixed(2)}</dd></div>
+          <div><dt>${esc(name('baid'))}’s payments in AED</dt><dd>₹${D.rates.baid.toFixed(2)}</dd></div>
           <div><dt>Card charges billed in INR<span class="sub">Warner Bros. World, both Dubai taxis paid by card, the Delhi airport taxi</span></dt><dd>actual ₹</dd></div>
         </dl>
       </section>

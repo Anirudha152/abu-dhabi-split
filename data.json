@@ -27,14 +27,14 @@
   },
   {
    "id": "baid",
-   "name": "Baid",
+   "name": "L Baid",
    "spent": 29617.46,
    "paid": 29271.88,
    "net": -345.58
   },
   {
    "id": "bhatnagar",
-   "name": "Bhatnagar",
+   "name": "L Bhatnagar",
    "spent": 30456.36,
    "paid": 40846.0,
    "net": 10389.64
@@ -1555,13 +1555,13 @@
      "person": "baid",
      "aed": 52.0,
      "inr": 1359.8,
-     "note": "Baid’s share"
+     "note": "L Baid’s share"
     },
     {
      "person": "bhatnagar",
      "aed": 54.0,
      "inr": 1412.1,
-     "note": "Bhatnagar’s share"
+     "note": "L Bhatnagar’s share"
     },
     {
      "person": "mansi",
@@ -1591,14 +1591,14 @@
      ]
     },
     {
-     "name": "Baid’s share",
+     "name": "L Baid’s share",
      "aed": 52.0,
      "who": [
       "baid"
      ]
     },
     {
-     "name": "Bhatnagar’s share",
+     "name": "L Bhatnagar’s share",
      "aed": 54.0,
      "who": [
       "bhatnagar"
@@ -1631,7 +1631,7 @@
    "id": 35,
    "date": null,
    "title": "Warner Bros. World",
-   "source": "Bhatnagar, card",
+   "source": "L Bhatnagar, card",
    "payer": "bhatnagar",
    "aed": null,
    "rate": null,
@@ -1790,7 +1790,7 @@
    "id": 38,
    "date": null,
    "title": "Mosque",
-   "source": "Baid",
+   "source": "L Baid",
    "payer": "baid",
    "aed": 30,
    "rate": 26.36,
@@ -1821,7 +1821,7 @@
    "id": 39,
    "date": "2026-11-14",
    "title": "Taxi to Din Tai Fung",
-   "source": "Baid",
+   "source": "L Baid",
    "payer": "baid",
    "aed": 78,
    "rate": 26.36,
@@ -1870,7 +1870,7 @@
    "id": 40,
    "date": null,
    "title": "Taxi, AD Mall to hostel",
-   "source": "Baid",
+   "source": "L Baid",
    "payer": "baid",
    "aed": 67,
    "rate": 26.36,
@@ -1901,7 +1901,7 @@
    "id": 41,
    "date": "2026-11-15",
    "title": "Taxi back from Dubai",
-   "source": "Baid, card",
+   "source": "L Baid, card",
    "payer": "baid",
    "aed": 286,
    "rate": 26.363636363636363,
@@ -1950,7 +1950,7 @@
    "id": 42,
    "date": "2026-11-15",
    "title": "Chips at go-karting",
-   "source": "Baid",
+   "source": "L Baid",
    "payer": "baid",
    "aed": 10,
    "rate": 26.36,
@@ -1969,7 +1969,7 @@
    "id": 43,
    "date": null,
    "title": "Lebanese Roaster chocolates",
-   "source": "Baid",
+   "source": "L Baid",
    "payer": "baid",
    "aed": 298,
    "rate": 26.36,
@@ -2194,7 +2194,7 @@
   {
    "person": "kavya",
    "inr": 9000,
-   "title": "Cash to Bhatnagar",
+   "title": "Cash to L Bhatnagar",
    "kind": "transfer",
    "date": null,
    "expense": null
@@ -2210,7 +2210,7 @@
   {
    "person": "mansi",
    "inr": 9000,
-   "title": "Cash to Bhatnagar",
+   "title": "Cash to L Bhatnagar",
    "kind": "transfer",
    "date": null,
    "expense": null
@@ -2226,7 +2226,7 @@
   {
    "person": "baid",
    "inr": 9000,
-   "title": "Cash to Bhatnagar",
+   "title": "Cash to L Bhatnagar",
    "kind": "transfer",
    "date": null,
    "expense": null
@@ -2234,7 +2234,7 @@
   {
    "person": "bhatnagar",
    "inr": -9000,
-   "title": "Cash from Baid",
+   "title": "Cash from L Baid",
    "kind": "transfer",
    "date": null,
    "expense": null
@@ -2242,7 +2242,7 @@
   {
    "person": "gaurish",
    "inr": 8200,
-   "title": "Cash to Bhatnagar",
+   "title": "Cash to L Bhatnagar",
    "kind": "transfer",
    "date": null,
    "expense": null

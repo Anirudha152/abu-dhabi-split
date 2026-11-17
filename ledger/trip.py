@@ -7,6 +7,7 @@ from collections import defaultdict
 
 PEOPLE = ['ani', 'baid', 'bhatnagar', 'nitye', 'mansi', 'gaurish', 'kavya', 'sanket', 'sumit', 'nehal', 'arnav', 'anushree']
 NAMES = {p: p.capitalize() for p in PEOPLE}
+NAMES.update(bhatnagar='L Bhatnagar', baid='L Baid')
 
 # ---------------- Rates ----------------
 TOPUPS = [(150, 4290), (2122, 55098), (1600, 41641), (1600, 41641)]   # (AED, INR)
@@ -139,21 +140,21 @@ add(None, 'Cash for Kavya', NC, 'nitye', 50, DEFAULT_RATE, eq('kavya'))
 add(None, 'Taxi', NC, 'nitye', 90, DEFAULT_RATE, eq('ani', 'sumit'))
 add(None, 'Taxi', NC, 'nitye', 90, DEFAULT_RATE, eq('nitye', 'bhatnagar'))
 dtf = itemised('2026-11-14', 'Din Tai Fung, Galleria', NC, 'nitye', 328, DEFAULT_RATE, [
-    ('Nitye’s share', 60, 'nitye'), ('Baid’s share', 52, 'baid'), ('Bhatnagar’s share', 54, 'bhatnagar'),
+    ('Nitye’s share', 60, 'nitye'), ('L Baid’s share', 52, 'baid'), ('L Bhatnagar’s share', 54, 'bhatnagar'),
     ('Mansi’s share', 54, 'mansi'), ('Gaurish’s share', 54, 'gaurish'), ('Kavya’s share', 54, 'kavya')])
 
 # ---------------- Paid directly by individuals ----------------
-add(None, 'Warner Bros. World', 'Bhatnagar, card', 'bhatnagar', None, None,
+add(None, 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, None,
     eq('ani', 'kavya', 'mansi', 'baid', 'bhatnagar', 'nitye', 'gaurish'), inr=57666)
 add('2026-11-15', 'Taxi, Global Street to Dubai beach', 'Sanket, card', 'sanket', 70, 1838 / 70,
     eq('sanket', 'bhatnagar', 'nitye', 'arnav', 'anushree', 'kavya'), inr=1838)
 add('2026-11-15', 'Go-karting, Yas', 'Gaurish', 'gaurish', 980, DEFAULT_RATE,
     eq('ani', 'nitye', 'mansi', 'gaurish', 'bhatnagar', 'baid', 'kavya'))
-BS = 'Baid'
+BS = 'L Baid'
 add(None, 'Mosque', BS, 'baid', 30, BAID_RATE, eq('sanket', 'nehal', 'baid'))
 add('2026-11-14', 'Taxi to Din Tai Fung', BS, 'baid', 78, BAID_RATE, eq('nitye', 'mansi', 'bhatnagar', 'baid', 'kavya', 'gaurish'))
 add(None, 'Taxi, AD Mall to hostel', BS, 'baid', 67, BAID_RATE, eq('nitye', 'gaurish', 'baid'))
-add('2026-11-15', 'Taxi back from Dubai', 'Baid, card', 'baid', 286, 7540 / 286,
+add('2026-11-15', 'Taxi back from Dubai', 'L Baid, card', 'baid', 286, 7540 / 286,
     eq('bhatnagar', 'kavya', 'gaurish', 'baid', 'nehal', 'sumit'), inr=7540)
 add('2026-11-15', 'Chips at go-karting', BS, 'baid', 10, BAID_RATE, eq('kavya'))
 add(None, 'Lebanese Roaster chocolates', BS, 'baid', 298, BAID_RATE, {'bhatnagar': 193, 'baid': 105})
