@@ -20,6 +20,46 @@
   };
   const amtClass = (n) => (n >= 20000 ? 'amt-xl' : n >= 5000 ? 'amt-l' : n >= 1000 ? 'amt-m' : 'amt-s');
   const payerText = (e, me) => (e.payer === 'card' ? 'forex card' : e.payer === me ? 'you paid' : `${name(e.payer)} paid`);
+  const chev = '<svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+  const possessive = (n) => n + '’s';
+  function paidFrom(e) {
+    if (e.payer === 'card') return `Forex card, loaded by Ani (${rupees(D.card.ani)}) and ${name('bhatnagar')} (${rupees(D.card.bhatnagar)})`;
+    const how = e.source.includes(', ') ? e.source.split(', ')[1] : '';
+    return how ? `${possessive(name(e.payer))} ${how}` : `Paid by ${name(e.payer)}`;
+  }
+  function billLine(e) {
+    return e.aed != null
+      ? `${aedFmt.format(e.aed)} AED × ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)} = ${rupees(e.inr)}`
+      : `${rupees(e.inr)}, charged in INR`;
+  }
+  function expenseDetail(e, me) {
+    const shares = [...e.shares].sort((a, b) => b.inr - a.inr)
+      .map((s) => `<tr${s.person === me ? ' class="me"' : ''}><td>${link(s.person)}${s.note ? `<span class="sub">${esc(s.note)}</span>` : ''}</td><td class="num">${rupees(s.inr)}</td></tr>`)
+      .join('');
+    return `<dl class="facts">
+        <div><dt>Date</dt><dd>${e.date ? day(e.date) + ' 2026' : 'not recorded'}</dd></div>
+        <div><dt>Paid from</dt><dd>${esc(paidFrom(e))}</dd></div>
+        <div><dt>Bill</dt><dd>${esc(billLine(e))}</dd></div>
+      </dl>
+      <p class="split-head">Split between ${e.shares.length === 1 ? '1 person' : e.shares.length + ' people'}</p>
+      <table class="split"><tbody>${shares}</tbody></table>`;
+  }
+  function paymentDetail(p) {
+    const c = D.card;
+    if (p.kind === 'card' && p.inr > 0) {
+      const ups = c.topups.map((t) => `<tr><td>${day(t.when.slice(0, 10))}, ${t.when.slice(11)}</td><td class="num">${aedFmt.format(t.aed)} AED</td><td class="num">${rupees(t.inr)}</td></tr>`).join('');
+      return `<dl class="facts"><div><dt>Who loaded it</dt><dd>Ani ${rupees(c.ani)} (3 × ₹40,000 + ₹4,290), ${esc(name('bhatnagar'))} ${rupees(c.bhatnagar)} (the rest)</dd></div></dl>
+        <p class="split-head">The four top-ups</p><table class="split"><tbody>${ups}</tbody></table>`;
+    }
+    if (p.kind === 'card') {
+      return `<dl class="facts"><div><dt>What happened</dt><dd>${aedFmt.format(c.withdrawnAED)} AED was left on the card after the trip and cashed out for ${rupees(c.withdrawnINR)} (₹${(c.withdrawnINR / c.withdrawnAED).toFixed(2)}/AED).</dd></div></dl>`;
+    }
+    const t = D.payments.find((x) => x.kind === 'transfer' && x !== p && x.title.endsWith(name(p.person)) && Math.abs(x.inr) === Math.abs(p.inr));
+    const other = t ? name(t.person) : '';
+    return `<dl class="facts">
+      <div><dt>Date</dt><dd>${p.date ? day(p.date) + ' 2026' : 'not recorded'}</dd></div>
+      <div><dt>What happened</dt><dd>${p.inr > 0 ? `${esc(name(p.person))} handed ${rupees(p.inr)} in cash to ${esc(other)}` : `${esc(other)} handed ${rupees(-p.inr)} in cash to ${esc(name(p.person))}`}.</dd></div></dl>`;
+  }
   const sorter = (a, b) => (a.date === b.date ? a.order - b.order : !a.date ? 1 : !b.date ? -1 : a.date < b.date ? -1 : 1);
 
   function nav(current) {
@@ -53,27 +93,22 @@
     const exps = D.expenses.map((e) => ({ ...e, order: e.id })).sort(sorter);
     const entries = exps
       .map((e) => {
-        const rate = e.aed != null ? `${aedFmt.format(e.aed)} AED at ₹${e.rate.toFixed(e.payer === 'card' ? 4 : 2)}` : 'Charged in INR';
-        const shares = [...e.shares].sort((a, b) => b.inr - a.inr)
-          .map((s) => `<tr><td>${link(s.person)}${s.note ? `<span class="sub">${esc(s.note)}</span>` : ''}</td><td class="num">${rupees(s.inr)}</td></tr>`)
-          .join('');
         return `<details><summary><span class="e-date">${day(e.date)}</span>
-          <span><span class="e-title">${esc(e.title)}</span><span class="sub">${esc(payerText(e))} · ${e.shares.length === 1 ? name(e.shares[0].person) : `${e.shares.length} people`}</span></span>
+          <span><span class="e-title">${esc(e.title)}${chev}</span><span class="sub">${esc(payerText(e))} · ${e.shares.length === 1 ? name(e.shares[0].person) : `${e.shares.length} people`}</span></span>
           <span class="e-amt">${rupees(e.inr)}</span></summary>
-          <div class="e-body"><p class="meta">${esc(rate)}</p>
-          <table><tbody>${shares}</tbody></table></div></details>`;
+          <div class="e-body">${expenseDetail(e)}</div></details>`;
       })
       .join('');
 
     const c = D.card;
     main.innerHTML = `
       <section aria-labelledby="h-settle">
-        <div class="sec-head"><h2 id="h-settle">Settle up</h2><p class="sec-note">${D.settlements.length} payments clear everything</p></div>
+        <div class="sec-head"><h2 id="h-settle">Settle up</h2></div>
         <table class="settle"><thead><tr><th>Who pays</th><th>To</th><th class="num">Amount</th></tr></thead><tbody>${settleRows}</tbody></table>
       </section>
 
       <section aria-labelledby="h-bal">
-        <div class="sec-head"><h2 id="h-bal">Everyone’s balance</h2><p class="sec-note">Tap a name to see every line</p></div>
+        <div class="sec-head"><h2 id="h-bal">Everyone’s balance</h2></div>
         <table><thead><tr><th>Name</th><th class="num">Spent</th><th class="num">Paid in</th><th class="num">Balance</th></tr></thead>
         <tbody>${balanceRows}</tbody>
         <tfoot><tr><td><b>Trip total</b></td><td class="num"><b>${plain(D.totalSpent)}</b></td><td class="num"><b>${plain(D.totalSpent)}</b></td><td></td></tr></tfoot></table>
@@ -83,14 +118,14 @@
         <div class="sec-head"><h2 id="h-rates">How dirhams became rupees</h2></div>
         <dl class="rates">
           <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out, over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, ${esc(name('bhatnagar'))} ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
-          <div><dt>Nitye’s cash, Gaurish’s go-karting<span class="sub">No rate given, so the agreed default</span></dt><dd>₹${D.rates.cash.toFixed(2)}</dd></div>
+          <div><dt>Nitye’s cash, Gaurish’s go-karting</dt><dd>₹${D.rates.cash.toFixed(2)}</dd></div>
           <div><dt>${esc(name('baid'))}’s payments in AED</dt><dd>₹${D.rates.baid.toFixed(2)}</dd></div>
           <div><dt>Card charges billed in INR<span class="sub">Warner Bros. World, both Dubai taxis paid by card, the Delhi airport taxi</span></dt><dd>actual ₹</dd></div>
         </dl>
       </section>
 
       <section aria-labelledby="h-all">
-        <div class="sec-head"><h2 id="h-all">Every expense</h2><p class="sec-note">${D.expenses.length} entries · tap one for the split</p></div>
+        <div class="sec-head"><h2 id="h-all">Every expense</h2></div>
         <div class="entries">${entries}</div>
       </section>`;
   }
@@ -116,16 +151,16 @@
         const equal = e.shares.every((x) => Math.abs(x.inr - e.shares[0].inr) < 0.01);
         const how = s.note || (n === 1 ? '' : equal ? `split ${n} ways` : `your part of ${rupees(e.inr)}`);
         const aed = s.aed != null ? `${aedFmt.format(s.aed)} AED` : '';
-        rows.push({ date: e.date, order: e.id + 0.5, type: 'spent', title: e.title, sub: [how, aed, payerText(e, id)].filter(Boolean).join(' · '), dr: s.inr, cr: 0 });
+        rows.push({ date: e.date, order: e.id + 0.5, type: 'spent', title: e.title, sub: [how, aed, payerText(e, id)].filter(Boolean).join(' · '), dr: s.inr, cr: 0, detail: () => expenseDetail(e, id) });
       });
     });
     D.payments.forEach((p) => {
       if (p.person !== id) return;
       const e = p.expense ? D.expenses.find((x) => x.id === p.expense) : null;
       const title = p.kind === 'expense' ? `Paid: ${p.title}` : p.title;
-      const sub = e ? `the whole bill, shared by ${e.shares.length === 1 ? name(e.shares[0].person) : e.shares.length + ' people'}` : p.kind === 'transfer' ? (p.inr < 0 ? 'cash received, counts against what you put in' : 'cash, settled already') : p.inr < 0 ? 'counts against what you put in' : 'forex card';
+      const sub = e ? `the whole bill, shared by ${e.shares.length === 1 ? name(e.shares[0].person) : e.shares.length + ' people'}` : p.kind === 'transfer' ? (p.inr < 0 ? 'cash received' : 'cash') : 'forex card';
       const order = p.kind === 'card' && p.date ? 0 : e ? e.id : 9999;
-      rows.push({ date: p.date, order, type: 'paid', title, sub, dr: 0, cr: p.inr });
+      rows.push({ date: p.date, order, type: 'paid', title, sub, dr: 0, cr: p.inr, detail: () => (e ? expenseDetail(e, id) : paymentDetail(p)) });
     });
     rows.sort(sorter);
     let bal = 0;
@@ -138,13 +173,14 @@
     const balCell = (b) => `<td class="num bal both">${plain(b)}<span class="side">${side(b)}</span></td>`;
     const balSub = (b) => (showBal ? `<span class="sub bal-sub">bal ${plain(b)} ${side(b)}</span>` : '');
     const body = shown.length
-      ? shown.map((x) => `<tr>
+      ? shown.map((x, i) => `<tr class="line" data-i="${i}">
           <td class="date">${day(x.date)}</td>
-          <td>${esc(x.title)}${x.sub ? `<span class="sub">${esc(x.sub)}</span>` : ''}</td>
+          <td><button type="button" class="row-btn" aria-expanded="false" aria-controls="d${i}">${esc(x.title)}${chev}</button>${x.sub ? `<span class="sub">${esc(x.sub)}</span>` : ''}</td>
           <td class="num amt one ${x.dr ? 'dr' : 'cr'}">${x.dr ? '−' + plain(x.dr) : (x.cr < 0 ? '−' : '+') + plain(x.cr) + recd(x)}${balSub(x.bal)}</td>
           <td class="num amt both dr">${x.dr ? plain(x.dr) : ''}</td>
           <td class="num amt both cr">${x.cr ? (x.cr < 0 ? '−' : '') + plain(x.cr) + recd(x) : ''}</td>
-          ${showBal ? balCell(x.bal) : ''}</tr>`).join('')
+          ${showBal ? balCell(x.bal) : ''}</tr>
+          <tr class="detail" id="d${i}" hidden><td colspan="6">${x.detail()}</td></tr>`).join('')
       : `<tr class="empty-row"><td colspan="6">Nothing here. ${esc(me.name)} didn’t pay for anything directly.</td></tr>`;
     const totDr = shown.reduce((a, x) => a + x.dr, 0), totCr = shown.reduce((a, x) => a + x.cr, 0);
 
@@ -178,6 +214,15 @@
         <a class="back" href="#"><span class="back-arrow">${arrow}</span>Everyone</a>
       </section>`;
 
+    main.querySelectorAll('tr.line').forEach((tr) =>
+      tr.addEventListener('click', (ev) => {
+        if (ev.target.closest('a')) return;
+        const btn = tr.querySelector('.row-btn');
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', open);
+        tr.classList.toggle('open', open);
+        document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+      }));
     main.querySelectorAll('[data-filter]').forEach((b) =>
       b.addEventListener('click', () => {
         filter = b.dataset.filter;
@@ -205,9 +250,6 @@
       D = data;
       byId = Object.fromEntries(D.people.map((p) => [p.id, p]));
       document.getElementById('cover-meta').textContent = `${D.trip.name} · ${D.trip.dates}`;
-      document.getElementById('foot').innerHTML = `
-        <p>Amounts are rounded to the nearest rupee, so nobody is off by more than ₹1. Every split adds back up to its bill, the forex card reconciles to the fils, and money spent equals money paid in: ${rupees(D.totalSpent)}.</p>
-        <p>Spot a mistake? Tell Ani and the page gets regenerated from the ledger.</p>`;
       route();
       window.addEventListener('hashchange', () => {
         route();

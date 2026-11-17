@@ -11,6 +11,7 @@ NAMES.update(bhatnagar='L Bhatnagar', baid='L Baid')
 
 # ---------------- Rates ----------------
 TOPUPS = [(150, 4290), (2122, 55098), (1600, 41641), (1600, 41641)]   # (AED, INR)
+TOPUP_DATES = ['2026-11-12 18:52', '2026-11-12 21:12', '2026-11-14 21:04', '2026-11-15 02:12']
 WITHDRAW_AED, WITHDRAW_INR = 212.82, 5250
 CARD_SPENT_AED = 5259.18
 CARD_RATE = (sum(i for _, i in TOPUPS) - WITHDRAW_INR) / CARD_SPENT_AED  # 26.1295
@@ -247,7 +248,8 @@ out = {
     'trip': {'name': 'Abu Dhabi & Dubai', 'dates': '12–16 Nov 2026'},
     'rates': {'card': CARD_RATE, 'cash': DEFAULT_RATE, 'baid': BAID_RATE},
     'card': {'loadedAED': sum(a for a, _ in TOPUPS), 'loadedINR': sum(i for _, i in TOPUPS), 'withdrawnAED': WITHDRAW_AED,
-             'withdrawnINR': WITHDRAW_INR, 'spentAED': CARD_SPENT_AED, 'ani': ANI_LOADED, 'bhatnagar': BHATNAGAR_LOADED},
+             'withdrawnINR': WITHDRAW_INR, 'spentAED': CARD_SPENT_AED, 'ani': ANI_LOADED, 'bhatnagar': BHATNAGAR_LOADED,
+             'topups': [{'when': w, 'aed': a, 'inr': i} for w, (a, i) in zip(TOPUP_DATES, TOPUPS)]},
     'people': [{'id': p, 'name': NAMES[p], 'spent': round(spent[p], 2), 'paid': round(paid[p], 2), 'net': round(net[p], 2)} for p in PEOPLE],
     'expenses': [{**e, 'inr': round(e['inr'], 2), 'shares': [{**a, 'inr': round(a['inr'], 2), 'aed': None if a['aed'] is None else round(a['aed'], 2)} for a in e['shares']]} for e in expenses],
     'payments': [{**p, 'inr': round(p['inr'], 2)} for p in payments],
