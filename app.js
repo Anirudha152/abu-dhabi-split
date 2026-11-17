@@ -133,6 +133,7 @@
 
     const shown = rows.filter((x) => filter === 'all' || x.type === filter);
     const showBal = filter === 'all';
+    const recd = (x) => (x.cr < 0 ? '<span class="side">recd</span>' : '');
     const side = (b) => (Math.round(b) < 0 ? 'Dr' : 'Cr');
     const balCell = (b) => `<td class="num bal both">${plain(b)}<span class="side">${side(b)}</span></td>`;
     const balSub = (b) => (showBal ? `<span class="sub bal-sub">bal ${plain(b)} ${side(b)}</span>` : '');
@@ -140,9 +141,9 @@
       ? shown.map((x) => `<tr>
           <td class="date">${day(x.date)}</td>
           <td>${esc(x.title)}${x.sub ? `<span class="sub">${esc(x.sub)}</span>` : ''}</td>
-          <td class="num amt one ${x.dr ? 'dr' : 'cr'}">${x.dr ? '−' + plain(x.dr) : (x.cr < 0 ? '−' : '+') + plain(x.cr)}${balSub(x.bal)}</td>
+          <td class="num amt one ${x.dr ? 'dr' : 'cr'}">${x.dr ? '−' + plain(x.dr) : (x.cr < 0 ? '−' : '+') + plain(x.cr) + recd(x)}${balSub(x.bal)}</td>
           <td class="num amt both dr">${x.dr ? plain(x.dr) : ''}</td>
-          <td class="num amt both cr">${x.cr ? (x.cr < 0 ? '−' : '') + plain(x.cr) : ''}</td>
+          <td class="num amt both cr">${x.cr ? (x.cr < 0 ? '−' : '') + plain(x.cr) + recd(x) : ''}</td>
           ${showBal ? balCell(x.bal) : ''}</tr>`).join('')
       : `<tr class="empty-row"><td colspan="6">Nothing here. ${esc(me.name)} didn’t pay for anything directly.</td></tr>`;
     const totDr = shown.reduce((a, x) => a + x.dr, 0), totCr = shown.reduce((a, x) => a + x.cr, 0);
@@ -152,7 +153,6 @@
       <div class="account">
         <div class="acct-row">
           <div>
-            <p class="acct-label">Account holder</p>
             <h1 class="acct-name">${esc(me.name)}</h1>
             <p class="acct-sum">Spent <b>${rupees(me.spent)}</b><br>Paid in <b>${rupees(me.paid)}</b></p>
           </div>
@@ -175,7 +175,7 @@
             <td class="num one">${showBal ? `${plain(bal)} ${side(bal)}` : filter === 'spent' ? '−' + plain(totDr) : (totCr - totDr >= 0 ? '+' : '−') + plain(totCr - totDr)}</td>
             <td class="num both">${plain(totDr)}</td><td class="num both">${plain(totCr)}</td>${showBal ? balCell(bal) : ''}</tr></tfoot>
         </table>
-        <a class="back" href="#">← Everyone</a>
+        <a class="back" href="#"><span class="back-arrow">${arrow}</span>Everyone</a>
       </section>`;
 
     main.querySelectorAll('[data-filter]').forEach((b) =>

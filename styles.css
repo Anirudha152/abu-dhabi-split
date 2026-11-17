@@ -74,7 +74,9 @@ section:first-child { margin-top: 20px; }
 .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin-bottom: 4px; flex-wrap: wrap; }
 h2 { font: 700 21px/1.2 var(--sans); }
 .sec-note { font-size: 14px; color: var(--ink-soft); }
-.back { display: inline-block; margin-top: 20px; font-weight: 600; font-size: 15px; }
+.back { display: inline-flex; align-items: center; margin-top: 20px; font-weight: 600; font-size: 15px; }
+.back-arrow { display: inline-flex; transform: scaleX(-1); margin-right: 6px; }
+.back-arrow .arrow { margin-right: 0; }
 
 /* ---------- tables ---------- */
 table { width: 100%; border-collapse: collapse; }
@@ -93,6 +95,7 @@ th.num { font-family: var(--sans); }
 .person-link { font-weight: 600; }
 
 /* settle-up */
+@media (min-width: 720px) { .settle { max-width: 600px; } }
 .settle td { padding-top: 11px; padding-bottom: 11px; vertical-align: baseline; }
 .settle .from { font-weight: 700; }
 .settle .group-cont td { border-top: 0; }
@@ -107,7 +110,7 @@ th.num { font-family: var(--sans); }
 /* balance tags: state by form, not only hue */
 .tag {
   display: inline-block; padding: 3px 7px 2px; border-radius: 2px;
-  font: 700 13px/1.2 var(--mono); letter-spacing: 0.02em; white-space: nowrap;
+  font: 600 13px/1.2 var(--mono); letter-spacing: 0.02em; white-space: nowrap;
 }
 .tag.owes { background: var(--debit); color: #fbefe9; }
 .tag.gets { border: 1.5px solid var(--violet); color: var(--violet); padding: 1.5px 5.5px 0.5px; }
@@ -125,8 +128,7 @@ th.num { font-family: var(--sans); }
 .account::before { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--paper-deep) 72%, transparent); pointer-events: none; }
 .account > * { position: relative; }
 .acct-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
-.acct-label { font: 600 12px/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
-.acct-name { font: 700 34px/1.05 var(--sans); margin-top: 6px; letter-spacing: -0.01em; }
+.acct-name { font: 700 34px/1.05 var(--sans); letter-spacing: -0.01em; }
 .acct-sum { margin-top: 10px; font: 500 14px/1.5 var(--mono); color: var(--ink-soft); }
 .acct-sum b { color: var(--ink); font-weight: 600; }
 
@@ -135,8 +137,6 @@ th.num { font-family: var(--sans); }
   padding: 8px 14px 9px; border: 4px double currentColor; border-radius: 4px;
   transform: rotate(-4deg); transform-origin: 50% 60%;
   font-family: var(--dots); text-transform: uppercase; line-height: 1;
-  -webkit-mask-image: radial-gradient(circle at 30% 40%, #000 62%, rgba(0,0,0,.82) 100%);
-          mask-image: radial-gradient(circle at 30% 40%, #000 62%, rgba(0,0,0,.82) 100%);
 }
 .stamp .s-word { font-weight: 800; font-size: 17px; letter-spacing: 0.18em; }
 .stamp .s-amt { font-weight: 800; font-size: 40px; margin-top: 4px; letter-spacing: 0.01em; }
@@ -159,7 +159,7 @@ th.num { font-family: var(--sans); }
   padding: 10px 12px; border-radius: var(--radius);
   font: 600 17px/1.2 var(--sans);
 }
-.todo-line .num { font: 700 19px/1 var(--mono); }
+.todo-line .num { font: 600 19px/1 var(--mono); }
 .todo-line a { text-decoration: underline; text-decoration-thickness: 1px; }
 .todo-none { margin-top: 14px; font-weight: 600; }
 
@@ -179,7 +179,7 @@ th.num { font-family: var(--sans); }
 .book .dr { color: var(--ink); }
 .book .cr { color: var(--violet); }
 .book .bal { font-size: 14px; }
-.book .bal .side { font-size: 11px; margin-left: 3px; color: var(--ink-soft); }
+.book .side { font-size: 11px; margin-left: 4px; color: var(--ink-soft); }
 .book tfoot td { border-bottom: 0; border-top: 2px solid var(--ink); font-weight: 700; padding-top: 12px; }
 .book .both { display: none; }
 .book td.amt { font-size: 15px; }
@@ -187,6 +187,7 @@ th.num { font-family: var(--sans); }
 @media (min-width: 640px) {
   .book .one { display: none; }
   .book .both { display: table-cell; }
+  .book td.both, .book th.both { border-left: 1px solid var(--rule); padding-left: 12px; width: 112px; }
 }
 .empty-row td { color: var(--ink-soft); padding: 20px 0; }
 
