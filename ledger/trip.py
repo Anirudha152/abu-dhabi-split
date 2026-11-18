@@ -144,6 +144,7 @@ add('2026-11-13', 'Taxis, 90 AED each', NC, 'nitye', 180, DEFAULT_RATE, {'nitye'
 dtf = itemised('2026-11-14', 'Din Tai Fung, Galleria', NC, 'nitye', 328, DEFAULT_RATE, [
     ('Nitye’s share', 60, 'nitye'), ('L Baid’s share', 52, 'baid'), ('L Bhatnagar’s share', 54, 'bhatnagar'),
     ('Mansi’s share', 54, 'mansi'), ('Gaurish’s share', 54, 'gaurish'), ('Kavya’s share', 54, 'kavya')])
+add('2026-11-15', 'Taxi, Warner Bros. World to Yas Karting', NC, 'nitye', 13.5, DEFAULT_RATE, eq('nitye', 'ani', 'mansi'))
 
 # ---------------- Paid directly by individuals ----------------
 add('2026-11-15', 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, None,
@@ -160,7 +161,10 @@ add('2026-11-15', 'Taxi back from Dubai', 'L Baid, card', 'baid', 286, 7540 / 28
     eq('bhatnagar', 'kavya', 'gaurish', 'baid', 'nehal', 'sumit'), inr=7540)
 add('2026-11-15', 'Chips at go-karting', BS, 'baid', 10, BAID_RATE, eq('kavya'))
 add('2026-11-15', 'Lebanese Roaster chocolates', BS, 'baid', 298, BAID_RATE, {'bhatnagar': 193, 'baid': 105})
+add('2026-11-12', 'Taxi, campus to Delhi airport', 'Nitye', 'nitye', None, None, eq('nitye', 'ani', 'bhatnagar', 'sanket'), inr=465)
+add('2026-11-12', 'Taxi, campus to Delhi airport', BS, 'baid', None, None, eq('baid', 'kavya', 'gaurish', 'mansi'), inr=410)
 add('2026-11-16', 'Taxi from Delhi airport', 'Ani, cash', 'ani', None, None, eq('ani', 'bhatnagar', 'nitye'), inr=605)
+add('2026-11-16', 'Taxi, Delhi airport to campus', 'Gaurish', 'gaurish', None, None, eq('gaurish', 'mansi', 'arnav', 'sanket', 'kavya'), inr=1000)
 
 # ---------------- Payments in ----------------
 def pay(person, inr, title, kind, date=None, expense=None):
@@ -210,9 +214,9 @@ net = {p: paid[p] - spent[p] for p in PEOPLE}
 
 # ---------------- Settle up: whole rupees, fewest payments ----------------
 rounded = {p: round(net[p]) for p in PEOPLE}
-drift = sum(rounded.values())
-if drift:  # push the rounding rupee(s) onto the biggest creditor
-    top = max(PEOPLE, key=lambda p: rounded[p]); rounded[top] -= drift
+while (drift := sum(rounded.values())):  # move one rupee at a time from whoever rounded furthest the wrong way
+    step = 1 if drift > 0 else -1
+    p = max(PEOPLE, key=lambda p: (rounded[p] - net[p]) * step); rounded[p] -= step
 # Settle so that small debts are paid whole to one person: each smaller creditor (largest first) is filled by
 # debtors whose entire debt fits, the largest remaining debtor tops up any gap, and everyone
 # left pays the biggest creditor.
