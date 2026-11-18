@@ -43,9 +43,9 @@
   {
    "id": "ani",
    "name": "Ani",
-   "spent": 45434.28,
+   "spent": 45644.28,
    "paid": 124895.0,
-   "net": 79460.72
+   "net": 79250.72
   },
   {
    "id": "baid",
@@ -93,8 +93,8 @@
    "id": "sanket",
    "name": "Sanket",
    "spent": 16879.69,
-   "paid": 1838.0,
-   "net": -15041.69
+   "paid": 2048.0,
+   "net": -14831.69
   },
   {
    "id": "sumit",
@@ -1786,6 +1786,25 @@
   },
   {
    "id": 38,
+   "date": "2026-11-14",
+   "title": "Chai, Global Village",
+   "source": "Sanket",
+   "payer": "sanket",
+   "aed": 8,
+   "rate": 26.25,
+   "inr": 210,
+   "shares": [
+    {
+     "person": "ani",
+     "aed": 8.0,
+     "inr": 210.0,
+     "note": ""
+    }
+   ],
+   "items": []
+  },
+  {
+   "id": 39,
    "date": "2026-11-15",
    "title": "Go-karting, Yas",
    "source": "Gaurish",
@@ -1840,7 +1859,7 @@
    "items": []
   },
   {
-   "id": 39,
+   "id": 40,
    "date": "2026-11-13",
    "title": "Mosque",
    "source": "L Baid",
@@ -1871,7 +1890,7 @@
    "items": []
   },
   {
-   "id": 40,
+   "id": 41,
    "date": "2026-11-14",
    "title": "Taxi to Din Tai Fung",
    "source": "L Baid",
@@ -1920,7 +1939,7 @@
    "items": []
   },
   {
-   "id": 41,
+   "id": 42,
    "date": "2026-11-13",
    "title": "Taxi, Galleria Mall to hostel",
    "source": "L Baid",
@@ -1951,7 +1970,7 @@
    "items": []
   },
   {
-   "id": 42,
+   "id": 43,
    "date": "2026-11-15",
    "title": "Taxi back from Dubai",
    "source": "L Baid, card",
@@ -2000,7 +2019,7 @@
    "items": []
   },
   {
-   "id": 43,
+   "id": 44,
    "date": "2026-11-15",
    "title": "Chips at go-karting",
    "source": "L Baid",
@@ -2019,7 +2038,7 @@
    "items": []
   },
   {
-   "id": 44,
+   "id": 45,
    "date": "2026-11-15",
    "title": "Lebanese Roaster chocolates",
    "source": "L Baid",
@@ -2044,7 +2063,7 @@
    "items": []
   },
   {
-   "id": 45,
+   "id": 46,
    "date": "2026-11-12",
    "title": "Taxi, campus to Delhi airport",
    "source": "Nitye",
@@ -2081,7 +2100,7 @@
    "items": []
   },
   {
-   "id": 46,
+   "id": 47,
    "date": "2026-11-12",
    "title": "Taxi, campus to Delhi airport",
    "source": "L Baid",
@@ -2118,7 +2137,7 @@
    "items": []
   },
   {
-   "id": 47,
+   "id": 48,
    "date": "2026-11-16",
    "title": "Taxi from Delhi airport",
    "source": "Ani, cash",
@@ -2149,7 +2168,7 @@
    "items": []
   },
   {
-   "id": 48,
+   "id": 49,
    "date": "2026-11-16",
    "title": "Taxi, Delhi airport to campus",
    "source": "Gaurish",
@@ -2306,12 +2325,20 @@
    "expense": 37
   },
   {
+   "person": "sanket",
+   "inr": 210,
+   "title": "Chai, Global Village",
+   "kind": "expense",
+   "date": "2026-11-14",
+   "expense": 38
+  },
+  {
    "person": "gaurish",
    "inr": 25627.0,
    "title": "Go-karting, Yas",
    "kind": "expense",
    "date": "2026-11-15",
-   "expense": 38
+   "expense": 39
   },
   {
    "person": "baid",
@@ -2319,7 +2346,7 @@
    "title": "Mosque",
    "kind": "expense",
    "date": "2026-11-13",
-   "expense": 39
+   "expense": 40
   },
   {
    "person": "baid",
@@ -2327,7 +2354,7 @@
    "title": "Taxi to Din Tai Fung",
    "kind": "expense",
    "date": "2026-11-14",
-   "expense": 40
+   "expense": 41
   },
   {
    "person": "baid",
@@ -2335,7 +2362,7 @@
    "title": "Taxi, Galleria Mall to hostel",
    "kind": "expense",
    "date": "2026-11-13",
-   "expense": 41
+   "expense": 42
   },
   {
    "person": "baid",
@@ -2343,7 +2370,7 @@
    "title": "Taxi back from Dubai",
    "kind": "expense",
    "date": "2026-11-15",
-   "expense": 42
+   "expense": 43
   },
   {
    "person": "baid",
@@ -2351,7 +2378,7 @@
    "title": "Chips at go-karting",
    "kind": "expense",
    "date": "2026-11-15",
-   "expense": 43
+   "expense": 44
   },
   {
    "person": "baid",
@@ -2359,7 +2386,7 @@
    "title": "Lebanese Roaster chocolates",
    "kind": "expense",
    "date": "2026-11-15",
-   "expense": 44
+   "expense": 45
   },
   {
    "person": "nitye",
@@ -2367,7 +2394,7 @@
    "title": "Taxi, campus to Delhi airport",
    "kind": "expense",
    "date": "2026-11-12",
-   "expense": 45
+   "expense": 46
   },
   {
    "person": "baid",
@@ -2375,7 +2402,7 @@
    "title": "Taxi, campus to Delhi airport",
    "kind": "expense",
    "date": "2026-11-12",
-   "expense": 46
+   "expense": 47
   },
   {
    "person": "ani",
@@ -2383,7 +2410,7 @@
    "title": "Taxi from Delhi airport",
    "kind": "expense",
    "date": "2026-11-16",
-   "expense": 47
+   "expense": 48
   },
   {
    "person": "gaurish",
@@ -2391,7 +2418,7 @@
    "title": "Taxi, Delhi airport to campus",
    "kind": "expense",
    "date": "2026-11-16",
-   "expense": 48
+   "expense": 49
   },
   {
    "person": "kavya",
@@ -2482,7 +2509,7 @@
   {
    "from": "sanket",
    "to": "ani",
-   "inr": 13277
+   "inr": 13067
   },
   {
    "from": "sanket",
@@ -2515,5 +2542,5 @@
    "inr": 38
   }
  ],
- "totalSpent": 277166.65
+ "totalSpent": 277376.65
 }

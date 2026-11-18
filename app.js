@@ -122,7 +122,7 @@
           <div><dt>Forex card<span class="sub">₹${inrFmt.format(c.loadedINR)} loaded − ₹${inrFmt.format(c.withdrawnINR)} cashed out (to ${esc(name('bhatnagar'))}), over ${aedFmt.format(c.spentAED)} AED spent. Ani loaded ₹${inrFmt.format(c.ani)}, ${esc(name('bhatnagar'))} ₹${inrFmt.format(c.bhatnagar)}.</span></dt><dd>₹${D.rates.card.toFixed(4)}</dd></div>
           <div><dt>Nitye’s cash, Gaurish’s go-karting</dt><dd>₹${D.rates.cash.toFixed(2)}</dd></div>
           <div><dt>${esc(name('baid'))}’s payments in AED</dt><dd>₹${D.rates.baid.toFixed(2)}</dd></div>
-          <div><dt>Paid in INR<span class="sub">Warner Bros. World, Sanket’s and ${esc(name('baid'))}’s card taxis, the Delhi airport taxis</span></dt><dd>actual ₹</dd></div>
+          <div><dt>Paid in INR<span class="sub">Warner Bros. World, Sanket’s chai and cab, ${esc(name('baid'))}’s card taxi, the Delhi airport taxis</span></dt><dd>actual ₹</dd></div>
         </dl>
       </section>
 

@@ -151,6 +151,7 @@ add('2026-11-15', 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, 
     eq('ani', 'kavya', 'mansi', 'baid', 'bhatnagar', 'nitye', 'gaurish'), inr=57666)
 add('2026-11-15', 'Taxi, Global Street to Dubai beach', 'Sanket, card', 'sanket', 70, 1838 / 70,
     eq('sanket', 'bhatnagar', 'nitye', 'arnav', 'anushree', 'kavya'), inr=1838)
+add('2026-11-14', 'Chai, Global Village', 'Sanket', 'sanket', 8, 210 / 8, eq('ani'), inr=210)
 add('2026-11-15', 'Go-karting, Yas', 'Gaurish', 'gaurish', 980, DEFAULT_RATE,
     eq('ani', 'nitye', 'mansi', 'gaurish', 'bhatnagar', 'baid', 'kavya'))
 BS = 'L Baid'
