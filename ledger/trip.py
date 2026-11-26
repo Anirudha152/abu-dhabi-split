@@ -182,7 +182,7 @@ for e in expenses:
         pay(e['payer'], e['inr'], e['title'], 'expense', e['date'], e['id'])
 TRANSFERS = [('kavya', 'bhatnagar', 9000, '2026-11-15'), ('mansi', 'bhatnagar', 9000, '2026-11-15'),
              ('baid', 'bhatnagar', 9000, '2026-11-15'), ('gaurish', 'bhatnagar', 8200, '2026-11-15'),
-             ('kavya', 'ani', 25610, '2026-11-26')]
+             ('kavya', 'ani', 25610, '2026-11-26'), ('kavya', 'nitye', 1883, '2026-11-26')]
 for frm, to, amt, date in TRANSFERS:
     pay(frm, amt, f'Cash to {NAMES[to]}', 'transfer', date)
     pay(to, -amt, f'Cash from {NAMES[frm]}', 'transfer', date)

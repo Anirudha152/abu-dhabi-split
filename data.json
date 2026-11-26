@@ -65,8 +65,8 @@
    "id": "nitye",
    "name": "Nitye",
    "spent": 30445.49,
-   "paid": 32328.78,
-   "net": 1883.28
+   "paid": 30445.78,
+   "net": 0.28
   },
   {
    "id": "mansi",
@@ -86,8 +86,8 @@
    "id": "kavya",
    "name": "Kavya",
    "spent": 37287.06,
-   "paid": 34610.0,
-   "net": -2677.06
+   "paid": 36493.0,
+   "net": -794.06
   },
   {
    "id": "sanket",
@@ -2658,63 +2658,74 @@
    "kind": "transfer",
    "date": "2026-11-26",
    "expense": null
+  },
+  {
+   "person": "kavya",
+   "inr": 1883,
+   "title": "Cash to Nitye",
+   "kind": "transfer",
+   "date": "2026-11-26",
+   "expense": null
+  },
+  {
+   "person": "nitye",
+   "inr": -1883,
+   "title": "Cash from Kavya",
+   "kind": "transfer",
+   "date": "2026-11-26",
+   "expense": null
   }
  ],
  "settlements": [
   {
    "from": "mansi",
    "to": "ani",
-   "inr": 28405
+   "inr": 27103
   },
   {
    "from": "mansi",
    "to": "bhatnagar",
-   "inr": 368
+   "inr": 1670
   },
   {
    "from": "sanket",
    "to": "ani",
-   "inr": 12949
+   "inr": 13605
   },
   {
    "from": "sanket",
-   "to": "nitye",
-   "inr": 1883
-  },
-  {
-   "from": "sumit",
-   "to": "ani",
-   "inr": 5560
-  },
-  {
-   "from": "sumit",
    "to": "baid",
    "inr": 1227
   },
   {
-   "from": "nehal",
+   "from": "sumit",
    "to": "ani",
-   "inr": 4050
+   "inr": 5817
   },
   {
-   "from": "nehal",
+   "from": "sumit",
    "to": "gaurish",
    "inr": 970
   },
   {
-   "from": "kavya",
+   "from": "nehal",
    "to": "ani",
-   "inr": 2677
+   "inr": 5020
   },
   {
    "from": "arnav",
-   "to": "bhatnagar",
+   "to": "ani",
    "inr": 2096
   },
   {
    "from": "anushree",
    "to": "bhatnagar",
    "inr": 1896
+  },
+  {
+   "from": "kavya",
+   "to": "bhatnagar",
+   "inr": 794
   }
  ],
  "totalSpent": 281299.52
