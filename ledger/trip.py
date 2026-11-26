@@ -152,6 +152,9 @@ add('2026-11-15', 'Warner Bros. World', 'L Bhatnagar, card', 'bhatnagar', None, 
 add('2026-11-15', 'Taxi, Global Street to Dubai beach', 'Sanket, card', 'sanket', 70, 1838 / 70,
     eq('sanket', 'bhatnagar', 'nitye', 'arnav', 'anushree', 'kavya'), inr=1838)
 add('2026-11-14', 'Chai, Global Village', 'Sanket', 'sanket', 8, 210 / 8, eq('ani'), inr=210)
+GV_CAB = eq('bhatnagar', 'mansi', 'gaurish', 'kavya', 'arnav', 'anushree')  # everyone not in the card taxi to Global Street
+add('2026-11-14', 'Taxi, Dubai Mall to Global Village', 'L Bhatnagar, cash', 'bhatnagar', 50, DEFAULT_RATE, GV_CAB)
+add('2026-11-14', 'Taxi, Dubai Mall to Global Village', 'Mansi, cash', 'mansi', 35.5, DEFAULT_RATE, GV_CAB)
 add('2026-11-15', 'Go-karting, Yas', 'Gaurish', 'gaurish', 980, DEFAULT_RATE,
     eq('ani', 'nitye', 'mansi', 'gaurish', 'bhatnagar', 'baid', 'kavya'))
 BS = 'L Baid'
@@ -160,6 +163,7 @@ add('2026-11-14', 'Taxi to Din Tai Fung', BS, 'baid', 78, BAID_RATE, eq('nitye',
 add('2026-11-13', 'Taxi, Galleria Mall to hostel', BS, 'baid', 67, BAID_RATE, eq('nitye', 'gaurish', 'baid'))
 add('2026-11-15', 'Taxi back from Dubai', 'L Baid, card', 'baid', 286, 7540 / 286,
     eq('bhatnagar', 'kavya', 'gaurish', 'baid', 'nehal', 'sumit'), inr=7540)
+add('2026-11-15', 'Taxi, Yas Island to campus', 'L Baid, cash', 'baid', 64, BAID_RATE, eq('baid', 'bhatnagar', 'kavya', 'gaurish'))
 add('2026-11-15', 'Chips at go-karting', BS, 'baid', 10, BAID_RATE, eq('kavya'))
 add('2026-11-15', 'Lebanese Roaster chocolates', BS, 'baid', 298, BAID_RATE, {'bhatnagar': 193, 'baid': 105})
 add('2026-11-12', 'Taxi, campus to Delhi airport', 'Nitye', 'nitye', None, None, eq('nitye', 'ani', 'bhatnagar', 'sanket'), inr=465)
@@ -176,10 +180,12 @@ pay('bhatnagar', -WITHDRAW_INR, f'Got back the forex card leftover ({WITHDRAW_AE
 for e in expenses:
     if e['payer'] != 'card':
         pay(e['payer'], e['inr'], e['title'], 'expense', e['date'], e['id'])
-TRANSFERS = [('kavya', 'bhatnagar', 9000), ('mansi', 'bhatnagar', 9000), ('baid', 'bhatnagar', 9000), ('gaurish', 'bhatnagar', 8200)]
-for frm, to, amt in TRANSFERS:
-    pay(frm, amt, f'Cash to {NAMES[to]}', 'transfer', '2026-11-15')
-    pay(to, -amt, f'Cash from {NAMES[frm]}', 'transfer', '2026-11-15')
+TRANSFERS = [('kavya', 'bhatnagar', 9000, '2026-11-15'), ('mansi', 'bhatnagar', 9000, '2026-11-15'),
+             ('baid', 'bhatnagar', 9000, '2026-11-15'), ('gaurish', 'bhatnagar', 8200, '2026-11-15'),
+             ('kavya', 'ani', 25610, '2026-11-26')]
+for frm, to, amt, date in TRANSFERS:
+    pay(frm, amt, f'Cash to {NAMES[to]}', 'transfer', date)
+    pay(to, -amt, f'Cash from {NAMES[frm]}', 'transfer', date)
 
 # ---------------- Checks ----------------
 ok = True
